@@ -1,0 +1,36 @@
+
+#####
+
+Create a script in /etc/profile.d
+
+Examples:
+
+1. create a simple script that sets one variable :
+
+   profile_d::script {'name-of-script.sh':
+    ensure  => present,
+    content => 'export VARIABLE=value',
+   }
+ 
+2. create a multi-line script using a template :
+
+   profile_d::script {'name-of-script.sh':
+    ensure       => present,
+    content_file => "${module_name}/script-template.sh.erb",
+   }
+
+
+3. use a file source :
+
+   profile_d::script {'name-of-script.sh':
+    ensure => present,
+    source => "puppet:///modules/${module_name}/script.sh",
+   }
+
+4. changing the default shell (/bin/sh) :
+
+   profile_d::script {'name-of-script.sh':
+    ensure  => present,
+    content => 'export VARIABLE=value',
+    shell   => '/bin/bash',
+   }

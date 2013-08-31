@@ -23,3 +23,7 @@ include google-chrome
 class { 'nodejs':
   version => 'v0.10.17'
 }
+
+class { 'java':
+  package => 'oracle-java8-installer',
+}
