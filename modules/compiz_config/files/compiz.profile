@@ -1027,7 +1027,7 @@ s0_menus_discovery_duration = 2
 s0_menus_discovery_fadein = 200
 s0_menus_discovery_fadeout = 300
 s0_num_launchers = 0
-s0_launcher_capture_mouse = true
+s0_launcher_capture_mouse = false
 
 [opacify]
 s0_toggle_key = <Super>o

@@ -26,6 +26,10 @@ package { 'terminator':
   ensure => 'installed'
 }
 
+package { 'dconf-tools':
+  ensure => 'installed'
+}
+
 include google-chrome
 
 class { 'nodejs':

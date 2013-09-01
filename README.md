@@ -6,6 +6,7 @@ These puppet files should allow me to reconstruct my entire development environm
 sudo apt-get update
 sudo apt-get install puppet git
 git clone https://github.com/alexishevia/.puppet.git ~/.puppet
-puppet apply --modulepath=$HOME/.puppet/modules ~/.puppet/manifests/devmachine.pp
 sudo puppet apply --modulepath=$HOME/.puppet/modules ~/.puppet/manifests/devmachine-root.pp
+puppet apply --modulepath=$HOME/.puppet/modules ~/.puppet/manifests/devmachine.pp
 ```
+

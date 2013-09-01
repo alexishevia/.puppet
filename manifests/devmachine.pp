@@ -63,3 +63,6 @@ include gtk_config
 
 # Compiz
 include compiz_config
+
+# Unity
+include unity_config
