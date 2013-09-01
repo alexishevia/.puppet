@@ -10,11 +10,15 @@ package { 'git-core':
   ensure => installed
 }
 
-package { 'vim':
+package { 'vim-gnome':
   ensure => 'installed'
 }
 
 package { 'ack-grep':
+  ensure => 'installed'
+}
+
+package { 'ncurses-term':
   ensure => 'installed'
 }
 

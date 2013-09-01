@@ -66,3 +66,6 @@ include compiz_config
 
 # Unity
 include unity_config
+
+# Bash
+include bash_config
