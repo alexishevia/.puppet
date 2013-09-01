@@ -58,3 +58,7 @@ file { '.psqlrc':
 # Terminator
 
 include terminator_config
+
+# GTK
+
+include gtk_config
