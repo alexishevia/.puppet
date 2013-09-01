@@ -22,6 +22,10 @@ package { 'xclip':
   ensure => 'installed'
 }
 
+package { 'terminator':
+  ensure => 'installed'
+}
+
 include google-chrome
 
 class { 'nodejs':

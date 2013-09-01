@@ -1,0 +1,27 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  title_transmit_bg_color = "#6b0005"
+[keybindings]
+  broadcast_all = <Ctrl><Shift>i
+  broadcast_off = <Ctrl><Shift>o
+  new_window = <Ctrl><Shift>n
+  new_tab = <Ctrl>T
+  split_horiz = <Ctrl><Shift>D
+  split_vert = <Ctrl>D
+  next_tab = <Ctrl>Right
+  prev_tab = <Ctrl>Left
+  go_up = <Ctrl><Alt>Up
+  go_down = <Ctrl><Alt>Down
+  go_left = <Ctrl><Alt>Left
+  go_right = <Ctrl><Alt>Right
+[profiles]
+  [[default]]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

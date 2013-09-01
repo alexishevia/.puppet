@@ -55,3 +55,6 @@ file { '.psqlrc':
   require => Vcsrepo['dotfiles']
 }
 
+# Terminator
+
+include terminator_config
