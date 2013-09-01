@@ -6,27 +6,7 @@ vcsrepo { 'dotfiles':
 }
 
 # VIM
-
-file { '.vim':
-  path   => "/home/$id/.vim",
-  ensure => link,
-  target => '.dotfiles/.vim',
-  require => Vcsrepo['dotfiles']
-}
-
-file { '.vimrc':
-  path   => "/home/$id/.vimrc",
-  ensure => link,
-  target => '.dotfiles/.vimrc',
-  require => Vcsrepo['dotfiles']
-}
-
-file { '.local.vimrc':
-  path   => "/home/$id/.local.vimrc",
-  ensure => link,
-  target => '.dotfiles/.local.vimrc.using_spaces',
-  require => Vcsrepo['dotfiles']
-}
+include vim_config
 
 # GIT
 
