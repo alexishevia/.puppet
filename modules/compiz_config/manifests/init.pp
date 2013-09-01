@@ -29,7 +29,7 @@ class compiz_config {
   file { "$compizFolder/compiz.profile":
     owner => "$id",
     group => "$id",
-    mode => 755,
+    mode => 754,
     source => "puppet:///modules/compiz_config/compiz.profile",
   }
 
