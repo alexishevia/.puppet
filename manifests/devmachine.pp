@@ -1,39 +1,9 @@
-vcsrepo { 'dotfiles':
-  path     => "/home/$id/.dotfiles",
-  ensure   => present,
-  provider => git,
-  source   => 'https://github.com/alexishevia/.dotfiles.git'
-}
-
-# VIM
 include vim_config
-
-# GIT
 include git_config
-
-# Ack
 include ack_config
-
-# Postgres
-
-file { '.psqlrc':
-  path   => "/home/$id/.psqlrc",
-  ensure => link,
-  target => '.dotfiles/.psqlrc',
-  require => Vcsrepo['dotfiles']
-}
-
-# Terminator
+include postgres_config
 include terminator_config
-
-# GTK
 include gtk_config
-
-# Compiz
 include compiz_config
-
-# Unity
 include unity_config
-
-# Bash
 include bash_config

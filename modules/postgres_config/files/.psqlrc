@@ -1,0 +1,6 @@
+-- Use a more descriptive prompt
+\set PROMPT1 '%n@%M:%>%x %/# '
+\set PROMPT2 ''
+
+-- Set expand mode
+\x
