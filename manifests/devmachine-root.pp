@@ -18,6 +18,10 @@ package { 'ack-grep':
   ensure => 'installed'
 }
 
+package { 'xclip':
+  ensure => 'installed'
+}
+
 include google-chrome
 
 class { 'nodejs':
