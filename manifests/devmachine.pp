@@ -11,14 +11,8 @@ include vim_config
 # GIT
 include git_config
 
-# Ack / Grep
-
-file { '.ackrc':
-  path   => "/home/$id/.ackrc",
-  ensure => link,
-  target => '.dotfiles/.ackrc',
-  require => Vcsrepo['dotfiles']
-}
+# Ack
+include ack_config
 
 # Postgres
 
