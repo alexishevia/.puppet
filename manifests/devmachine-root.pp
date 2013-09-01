@@ -43,3 +43,7 @@ class { 'nodejs':
 class { 'java':
   package => 'oracle-java8-installer',
 }
+
+class { 'vagrant':
+  version => '1.2.7'
+}
