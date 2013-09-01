@@ -1,0 +1,33 @@
+# This script verifies if a list of "undesired" words are presented in the files you are intented to commit such console
+# output, debugging information or keys/tokens/passwords
+
+# Based on the git hook created by Mark Story
+
+# http://mark-story.com/posts/view/using-git-commit-hooks-to-prevent-stupid-mistakes
+
+# Instructions:
+
+# Put this file into your .git/hooks folder and remove the .sh extension
+
+# ---------------------------------------------
+
+#!/bin/sh
+
+# Modify this
+# LIST='list\|of\|words\|splitted\|by\|slash\|and\|pipe'
+LIST="puts\|debugger\|binding.pry\|logger"
+
+if git rev-parse --verify HEAD >/dev/null 2>&1; then
+    against=HEAD
+else
+    against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
+fi
+
+for FILE in `git diff-index --name-status --cached $against -- | cut -c3-` ; do
+    # Check if the file contains one of the words in LIST
+    if grep -w $LIST $FILE; then
+      echo $FILE." has one of the word you don't want to commit. Please remove it"
+      exit 1
+    fi
+      done
+exit

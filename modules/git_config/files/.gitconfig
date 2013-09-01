@@ -1,0 +1,24 @@
+[user]
+  name = Alexis Hevia
+  email = hevia.alexis@gmail.com
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
+[merge]
+  keepBackup = false
+  tool = threesome
+[mergetool "threesome"]
+  cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+  trustExitCode = true
+[color]
+  ui = 1
+[push]
+  default = current
+[alias]
+  hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+  ignore = update-index --assume-unchanged
+  unignore = update-index --no-assume-unchanged
+  ignored = !git ls-files -v | grep ^[a-z]
+[core]
+  editor = /usr/bin/vim

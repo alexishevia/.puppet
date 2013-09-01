@@ -9,13 +9,7 @@ vcsrepo { 'dotfiles':
 include vim_config
 
 # GIT
-
-file { '.gitconfig':
-  path   => "/home/$id/.gitconfig",
-  ensure => link,
-  target => '.dotfiles/.gitconfig.personal',
-  require => Vcsrepo['dotfiles']
-}
+include git_config
 
 # Ack / Grep
 
