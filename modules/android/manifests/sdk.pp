@@ -41,6 +41,11 @@ class android::sdk {
     creates => $android::paths::sdk_home,
     cwd     => $android::paths::installdir,
     user    => $android::user,
+  } ->
+  file { $android::paths::sdk_home:
+    ensure => directory,
+    mode => 755,
+    recurse => true
   }
 
   # For 64bit systems, we need to install some 32bit libraries for the SDK
