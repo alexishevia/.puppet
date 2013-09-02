@@ -108,3 +108,7 @@ fi
 
 # enable 256-color support in terminal
 TERM=xterm-256color
+
+# add android tools to path
+PATH=$PATH:$HOME/android/android-sdk-linux/tools
+PATH=$PATH:$HOME/android/android-sdk-linux/platform-tools

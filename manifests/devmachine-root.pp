@@ -1,3 +1,5 @@
+$mainUser = 'alexishevia'
+
 package { 'build-essential':
   ensure => installed
 }
@@ -46,4 +48,10 @@ class { 'java':
 
 class { 'vagrant':
   version => '1.2.7'
+}
+
+class { 'android':
+  user => $mainUser,
+  group => $mainUser,
+  installdir => "/home/${mainUser}/android"
 }
