@@ -34,6 +34,14 @@ package { 'dconf-tools':
   ensure => 'installed'
 }
 
+package { 'unzip':
+  ensure => 'installed'
+}
+
+package { ['libjpeg62', 'libwebkitgtk-1.0-0']:
+  ensure => 'installed'
+}
+
 include google-chrome
 
 class { 'nodejs':
@@ -49,5 +57,7 @@ class { 'vagrant':
 }
 
 class { 'android':
-  installdir => "/opt"
+  installdir => "/opt/android"
 }
+
+include titanium_studio

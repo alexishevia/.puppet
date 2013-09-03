@@ -7,3 +7,4 @@ include gtk_config
 include compiz_config
 include unity_config
 include bash_config
+include titanium_studio_config

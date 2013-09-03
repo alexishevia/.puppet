@@ -110,5 +110,5 @@ fi
 TERM=xterm-256color
 
 # add android tools to path
-PATH=$PATH:/opt/android-sdk-linux/tools
-PATH=$PATH:/opt/android-sdk-linux/platform-tools
+PATH=$PATH:/opt/android/android-sdk-linux/tools
+PATH=$PATH:/opt/android/android-sdk-linux/platform-tools
