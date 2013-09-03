@@ -61,7 +61,7 @@ class { 'vagrant':
 class { 'android':
   user => $mainUser,
   group => $mainUser,
-  installdir => "/home/$mainUser/android"
+  installdir => "/home/$mainUser/.android"
 }
 
 include titanium_studio
