@@ -1,3 +1,5 @@
+$mainUser = "alexishevia"
+
 package { 'build-essential':
   ensure => installed
 }
@@ -57,7 +59,9 @@ class { 'vagrant':
 }
 
 class { 'android':
-  installdir => "/opt/android"
+  user => $mainUser,
+  group => $mainUser,
+  installdir => "/home/$mainUser/android"
 }
 
 include titanium_studio
