@@ -65,3 +65,4 @@ class { 'android':
 }
 
 include titanium_studio
+include avahi_config
