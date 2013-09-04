@@ -1,50 +1,29 @@
 $mainUser = "alexishevia"
 
-package { 'build-essential':
+$desiredPackages = [
+  'build-essential',
+  'git',
+  'git-core',
+  'vim-gnome',
+  'ack-grep',
+  'ncurses-term',
+  'xclip',
+  'terminator',
+  'dconf-tools',
+  'unzip',
+  'libjpeg62',
+  'libwebkitgtk-1.0-0',
+]
+
+$undesiredPackages = ['avahi-daemon']
+
+package { $desiredPackages:
   ensure => installed
 }
 
-package { 'git':
-  ensure => 'installed'
+package { $undesiredPackages:
+  ensure => purged
 }
-
-package { 'git-core':
-  ensure => installed
-}
-
-package { 'vim-gnome':
-  ensure => 'installed'
-}
-
-package { 'ack-grep':
-  ensure => 'installed'
-}
-
-package { 'ncurses-term':
-  ensure => 'installed'
-}
-
-package { 'xclip':
-  ensure => 'installed'
-}
-
-package { 'terminator':
-  ensure => 'installed'
-}
-
-package { 'dconf-tools':
-  ensure => 'installed'
-}
-
-package { 'unzip':
-  ensure => 'installed'
-}
-
-package { ['libjpeg62', 'libwebkitgtk-1.0-0']:
-  ensure => 'installed'
-}
-
-include google-chrome
 
 class { 'nodejs':
   version => 'v0.10.17'
@@ -64,5 +43,5 @@ class { 'android':
   installdir => "/home/$mainUser/.android"
 }
 
+include google-chrome
 include titanium_studio
-include avahi_config
