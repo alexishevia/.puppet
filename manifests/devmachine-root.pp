@@ -4,6 +4,7 @@ $desiredPackages = [
   'build-essential',
   'git',
   'git-core',
+  'gitk',
   'vim-gnome',
   'ack-grep',
   'ncurses-term',
