@@ -14,6 +14,7 @@ $desiredPackages = [
   'unzip',
   'libjpeg62',
   'libwebkitgtk-1.0-0',
+  'unrar'
 ]
 
 $undesiredPackages = ['avahi-daemon']
