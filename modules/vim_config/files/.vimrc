@@ -133,3 +133,4 @@ au VimEnter * if &diff | execute 'windo set wrap' | endif
 
 " set filetypes for common extensions
 au BufNewFile,BufRead *.pp set filetype=ruby
+au BufNewFile,BufRead Vagrantfile set filetype=ruby
