@@ -137,3 +137,11 @@ au BufNewFile,BufRead Vagrantfile set filetype=ruby
 
 " disable markdown folding
 let g:vim_markdown_folding_disabled=1
+
+" use camelcase motion for moving between words
+map w <Plug>CamelCaseMotion_w
+map b <Plug>CamelCaseMotion_b
+map e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
