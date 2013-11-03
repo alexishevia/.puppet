@@ -51,7 +51,7 @@ s0_filter_match = any
 s0_exclude_match = type=Desktop
 
 [core]
-s0_active_plugins = core;composite;opengl;compiztoolbox;decor;place;move;grid;gnomecompat;session;snap;regex;imgpng;put;vpswitch;resize;mousepoll;unitymtgrabhandles;animation;fade;expo;workarounds;ezoom;scale;unityshell;
+s0_active_plugins = core;composite;opengl;compiztoolbox;decor;place;move;grid;gnomecompat;session;snap;regex;imgpng;put;vpswitch;resize;mousepoll;unitymtgrabhandles;animation;expo;workarounds;ezoom;staticswitcher;fade;scale;unityshell;
 s0_audible_bell = true
 s0_ignore_hints_when_maximized = true
 s0_hide_skip_taskbar_windows = true
@@ -991,8 +991,8 @@ s0_launcher_switcher_forward = <Super>Tab
 s0_launcher_switcher_prev = <Shift><Super>Tab
 s0_alt_tab_timeout = true
 s0_alt_tab_bias_viewport = true
-s0_alt_tab_forward = <Alt>Tab
-s0_alt_tab_prev = <Shift><Alt>Tab
+s0_alt_tab_forward = Disabled
+s0_alt_tab_prev = Disabled
 s0_alt_tab_forward_all = <Control><Primary><Alt>Tab
 s0_alt_tab_prev_all = <Shift><Control><Primary><Alt>Tab
 s0_alt_tab_right = Disabled
