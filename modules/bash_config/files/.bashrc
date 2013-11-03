@@ -112,3 +112,9 @@ TERM=xterm-256color
 # add android tools to path
 PATH=$PATH:$HOME/.android/android-sdk-linux/tools
 PATH=$PATH:$HOME/.android/android-sdk-linux/platform-tools
+
+# create an alias for titanium command
+alias titanium=$HOME/.titanium/mobilesdk/linux/3.1.2.GA/titanium.py
+
+# use vi mode in bash
+set -o vi

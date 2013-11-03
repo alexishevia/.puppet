@@ -7,11 +7,4 @@ class bash_config {
     source => "puppet:///modules/bash_config/.bashrc",
   }
 
-  file { "/home/$id/.bash_profile":
-    owner => "$id",
-    group => "$id",
-    mode => 644,
-    source => "puppet:///modules/bash_config/.bash_profile",
-  }
-
 }
