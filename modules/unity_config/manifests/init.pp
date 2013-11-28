@@ -11,6 +11,8 @@ class unity_config {
   }
 
   # Copy my expected unity configuration
+  # you can find your current unity configuration by running
+  # dconf dump /desktop/unity/
   file { "$moduleFolder/dconf_unity.dat":
     owner => "$id",
     group => "$id",
