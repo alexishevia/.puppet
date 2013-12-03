@@ -5,12 +5,6 @@
   tool = vimdiff
 [difftool]
   prompt = false
-[merge]
-  keepBackup = false
-  tool = threesome
-[mergetool "threesome"]
-  cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
-  trustExitCode = true
 [color]
   ui = 1
 [push]
