@@ -19,8 +19,11 @@ set background=dark
 " set font
 set guifont=Monaco:h12
 
+" enable statusline
+set laststatus=2
+
 " set status line
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
 
 " make tab labels visible always
 set showtabline=2
