@@ -19,6 +19,9 @@ set background=dark
 " set font
 set guifont=Monaco:h12
 
+" set status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
 " make tab labels visible always
 set showtabline=2
 
