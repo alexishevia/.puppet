@@ -151,3 +151,6 @@ map e <Plug>CamelCaseMotion_e
 sunmap w
 sunmap b
 sunmap e
+
+" remap U to real undo
+map U :later<Enter>
