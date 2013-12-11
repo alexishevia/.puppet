@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Titanium Studio
-Exec=/opt/titanium_studio/Titanium_Studio/TitaniumStudio
-Icon=/opt/titanium_studio/Titanium_Studio/icon.xpm
-Terminal=false
-Type=Application
-StartupNotify=true
