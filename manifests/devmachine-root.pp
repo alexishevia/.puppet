@@ -16,7 +16,8 @@ $desiredPackages = [
   'libwebkitgtk-1.0-0',
   'unrar',
   'compizconfig-settings-manager',
-  'virtualbox'
+  'virtualbox',
+  's3cmd'
 ]
 
 $undesiredPackages = ['avahi-daemon']
