@@ -70,7 +70,7 @@ let g:ctrlp_prompt_mappings = {
       \ }
 
 " ignore folders on fuzzy search
-set wildignore=*coverage/*,*modules/*,*bower_components/*,*node_modules/*,*dist/*,*docs/out/*,*contenido/*
+set wildignore=*coverage/*,*bower_components/*,*node_modules/*,*dist/*,*docs/out/*,*contenido/*
 
 " ignore folders on NERDTree
 "let NERDTreeIgnore = ['\public\/*$']
