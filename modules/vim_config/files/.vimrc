@@ -163,3 +163,9 @@ nnoremap <leader>h <C-W><C-H>
 
 " enable Matchit macro
 runtime macros/matchit.vim
+
+" allow matchit to navigate quickly to ending tag in xml/html files
+autocmd FileType html let b:match_words = '<\(\w\w*\):</\1,{:}'
+autocmd FileType xhtml let b:match_words = '<\(\w\w*\):</\1,{:}'
+autocmd FileType xml let b:match_words = '<\(\w\w*\):</\1,{:}'
+autocmd FileType eco let b:match_words = '<\(\w\w*\):</\1,{:}'
