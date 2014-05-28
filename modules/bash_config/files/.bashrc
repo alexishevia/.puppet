@@ -113,8 +113,8 @@ TERM=xterm-256color
 PATH=$PATH:$HOME/adt-bundle/sdk/tools
 PATH=$PATH:$HOME/adt-bundle/sdk/platform-tools
 
-# create an alias for titanium command
-alias titanium=$HOME/.titanium/mobilesdk/linux/3.1.2.GA/titanium.py
+# add genymotion tools to path
+PATH=$PATH:$HOME/genymotion
 
 # use vi mode in bash
 set -o vi
