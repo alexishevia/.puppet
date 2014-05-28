@@ -110,8 +110,8 @@ fi
 TERM=xterm-256color
 
 # add android tools to path
-PATH=$PATH:$HOME/.android/android-sdk-linux/tools
-PATH=$PATH:$HOME/.android/android-sdk-linux/platform-tools
+PATH=$PATH:$HOME/adt-bundle/sdk/tools
+PATH=$PATH:$HOME/adt-bundle/sdk/platform-tools
 
 # create an alias for titanium command
 alias titanium=$HOME/.titanium/mobilesdk/linux/3.1.2.GA/titanium.py
