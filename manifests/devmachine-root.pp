@@ -17,8 +17,7 @@ $desiredPackages = [
   'unrar',
   'compizconfig-settings-manager',
   'virtualbox',
-  's3cmd',
-  'default-jre'
+  's3cmd'
 ]
 
 $undesiredPackages = ['avahi-daemon']
