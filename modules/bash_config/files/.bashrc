@@ -116,5 +116,8 @@ PATH=$PATH:$HOME/adt-bundle/sdk/platform-tools
 # add genymotion tools to path
 PATH=$PATH:$HOME/genymotion
 
+# define JAVA_HOME
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+
 # use vi mode in bash
 set -o vi
