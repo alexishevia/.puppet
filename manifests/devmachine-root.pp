@@ -17,7 +17,8 @@ $desiredPackages = [
   'unrar',
   'compizconfig-settings-manager',
   'virtualbox',
-  's3cmd'
+  's3cmd',
+  'default-jre'
 ]
 
 $undesiredPackages = ['avahi-daemon']
@@ -28,10 +29,6 @@ package { $desiredPackages:
 
 package { $undesiredPackages:
   ensure => purged
-}
-
-class { 'vagrant':
-  version => '1.2.7'
 }
 
 include google-chrome
