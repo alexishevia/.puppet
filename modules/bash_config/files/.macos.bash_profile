@@ -120,8 +120,8 @@ alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 # finderShowHidden:   Show hidden files in Finder
 # finderHideHidden:   Hide hidden files in Finder
 #-------------------------------------------------------------------
-alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
-alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
+alias finderShowHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias finderHideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 #---------------------------------------
 # WEB DEVELOPMENT
@@ -129,3 +129,9 @@ alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
 
 alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit /etc/hosts file
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### android tools
+export PATH="$HOME/adt-bundle/sdk/tools:$HOME/adt-bundle/sdk/platform-tools:$PATH"
