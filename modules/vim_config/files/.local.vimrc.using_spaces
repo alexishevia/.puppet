@@ -15,8 +15,8 @@ set softtabstop=2
 
 " highlight leading tabs
 augroup unwantedchars
-	autocmd!
-	:autocmd BufWinEnter * match UnwantedChars /^\t\+/
+  autocmd!
+  :autocmd BufWinEnter * match UnwantedChars /^\t\+/
 augroup END
 :highlight UnwantedChars ctermbg=darkgreen guibg=darkgreen
 

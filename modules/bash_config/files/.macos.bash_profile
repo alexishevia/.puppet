@@ -12,6 +12,9 @@ alias vim="/usr/local/Cellar/macvim/7.4-73/MacVim.app/Contents/MacOS/Vim"
 # set vim as default editor
 export EDITOR=vim
 
+# use git-completion
+source ~/git-completion.bash
+
 #-------------------------------
 # FILE AND FOLDER MANAGEMENT
 #-------------------------------

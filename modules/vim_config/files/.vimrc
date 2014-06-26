@@ -128,10 +128,10 @@ endif
 " filetype indent off
 " set smartindent
 
-" use to move tab left
+" use F9 to move tab left
 map <F9> :execute "tabmove" tabpagenr() - 2 <CR>
 
-" use to move tab right
+" use F10 to move tab right
 map <F10> :execute "tabmove" tabpagenr() <CR>
 
 " make sure wrap is not turned off by vimdiff
@@ -152,6 +152,7 @@ map e <Plug>CamelCaseMotion_e
 sunmap w
 sunmap b
 sunmap e
+set iskeyword+=-
 
 " remap U to real undo
 map U :later<Enter>
@@ -170,3 +171,31 @@ autocmd FileType html let b:match_words = '<\(\w\w*\):</\1,{:}'
 autocmd FileType xhtml let b:match_words = '<\(\w\w*\):</\1,{:}'
 autocmd FileType xml let b:match_words = '<\(\w\w*\):</\1,{:}'
 autocmd FileType eco let b:match_words = '<\(\w\w*\):</\1,{:}'
+
+" highlight all matches
+set hlsearch
+
+" highlight matches when jumping to next
+nnoremap <silent> n   n:call HLNext(0.3)<cr>
+nnoremap <silent> N   N:call HLNext(0.3)<cr>
+
+function! HLNext (blinktime)
+    highlight BlackOnBlack ctermfg=black ctermbg=black
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let hide_pat = '\%<'.lnum.'l.'
+            \ . '\|'
+            \ . '\%'.lnum.'l\%<'.col.'v.'
+            \ . '\|'
+            \ . '\%'.lnum.'l\%>'.(col+matchlen-1).'v.'
+            \ . '\|'
+            \ . '\%>'.lnum.'l.'
+    let ring = matchadd('BlackOnBlack', hide_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+endfunction
+
+" remap semicolon to colon (no need to use Shift + ;)
+nnoremap ; :
