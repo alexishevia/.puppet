@@ -128,11 +128,11 @@ endif
 " filetype indent off
 " set smartindent
 
-" use F9 to move tab left
-map <F9> :execute "tabmove" tabpagenr() - 2 <CR>
+" use F8 to move tab left
+map <F8> :execute "tabmove" tabpagenr() - 2 <CR>
 
-" use F10 to move tab right
-map <F10> :execute "tabmove" tabpagenr() <CR>
+" use F9 to move tab right
+map <F9> :execute "tabmove" tabpagenr() <CR>
 
 " make sure wrap is not turned off by vimdiff
 au VimEnter * if &diff | execute 'windo set wrap' | endif
