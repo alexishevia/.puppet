@@ -15,6 +15,9 @@ export EDITOR=vim
 # use git-completion
 source ~/git-completion.bash
 
+# use vi mode in bash
+set -o vi
+
 #-------------------------------
 # FILE AND FOLDER MANAGEMENT
 #-------------------------------
