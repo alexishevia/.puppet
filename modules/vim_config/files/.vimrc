@@ -69,11 +69,18 @@ let g:ctrlp_prompt_mappings = {
       \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
       \ }
 
-" ignore folders on fuzzy search
-set wildignore=*coverage/*,*bower_components/*,*node_modules/*,*dist/*,*docs/out/*,*contenido/*
+" make ctrlP ignore files specified on .gitignore
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others'],
+    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+    \ },
+  \ 'fallback': 'find %s -type f'
+  \ }
 
-" ignore folders on NERDTree
+" make NERDTree ignore public folder
 "let NERDTreeIgnore = ['\public\/*$']
+
 
 " show hidden files on NERDTree
 let NERDTreeShowHidden=1
