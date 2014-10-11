@@ -6,6 +6,9 @@
 PS1='$PWD
 ==> '
 
+# ignore duplicate entries on bash history
+HISTCONTROL=ignoredups
+
 # use macvim instead of vim
 alias vim="/usr/local/Cellar/macvim/7.4-73/MacVim.app/Contents/MacOS/Vim"
 
@@ -141,3 +144,21 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ### android tools
 export PATH="$HOME/adt-bundle/sdk/tools:$HOME/adt-bundle/sdk/platform-tools:$PATH"
+
+### Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+### Python
+PATH=${PATH}:/usr/local/share/python
+
+export PIP_DOWNLOAD_CACHE="/Users/alexishevia/.pip_download_cache"
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+else
+    echo "WARNING: Can't find virtualenvwrapper.sh"
+fi
