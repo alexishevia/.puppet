@@ -29,5 +29,3 @@ package { $desiredPackages:
 package { $undesiredPackages:
   ensure => purged
 }
-
-include google-chrome

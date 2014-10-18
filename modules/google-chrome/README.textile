@@ -1,3 +1,0 @@
-A Puppet module to install Google Chrome.
-
-This module is currently Ubuntu-specific, although it would be relatively straightforward to extend it to the other Linux distros Chrome supports (Debian, Fedora and openSUSE).
