@@ -16,7 +16,6 @@ $desiredPackages = [
   'libwebkitgtk-1.0-0',
   'unrar',
   'compizconfig-settings-manager',
-  'virtualbox',
   's3cmd'
 ]
 
