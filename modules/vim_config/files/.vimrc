@@ -206,3 +206,8 @@ endfunction
 
 " remap semicolon to colon (no need to use Shift + ;)
 nnoremap ; :
+
+" incsearch mapping
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
