@@ -128,3 +128,9 @@ PS1='$PWD
 
 # add local node_modules binaries to PATH
 PATH=$PATH:./node_modules/.bin
+
+#---------------------------------------
+# Docker Shortcuts
+#---------------------------------------
+alias dockerRemoveStoppedContainers='docker rm $(docker ps -a -q)'
+alias dockerRemoveUntaggedImages='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
