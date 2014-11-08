@@ -125,3 +125,6 @@ set -o vi
 # multi-line prompt
 PS1='$PWD
 ==> '
+
+# add local node_modules binaries to PATH
+PATH=$PATH:./node_modules/.bin
