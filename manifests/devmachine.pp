@@ -3,7 +3,7 @@ include git_config
 include ack_config
 include postgres_config
 include terminator_config
-include gtk_config
-include compiz_config
-include unity_config
+#include gtk_config
+#include compiz_config
+#include unity_config
 include bash_config
