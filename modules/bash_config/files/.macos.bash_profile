@@ -145,6 +145,10 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### android tools
 export PATH="$HOME/adt-bundle/sdk/tools:$HOME/adt-bundle/sdk/platform-tools:$PATH"
 
+### nvm
+source ~/.nvm/nvm.sh
+export PATH="./node_modules/.bin:$PATH"
+
 ### Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 

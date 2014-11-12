@@ -1,0 +1,11 @@
+leiningen	leiningen.txt	/*leiningen*
+leiningen-:Console	leiningen.txt	/*leiningen-:Console*
+leiningen-:Emain	leiningen.txt	/*leiningen-:Emain*
+leiningen-:Eresource	leiningen.txt	/*leiningen-:Eresource*
+leiningen-:Esource	leiningen.txt	/*leiningen-:Esource*
+leiningen-:Etest	leiningen.txt	/*leiningen-:Etest*
+leiningen-about	leiningen.txt	/*leiningen-about*
+leiningen-compiler	leiningen.txt	/*leiningen-compiler*
+leiningen-projections	leiningen.txt	/*leiningen-projections*
+leiningen-repl	leiningen.txt	/*leiningen-repl*
+leiningen.txt	leiningen.txt	/*leiningen.txt*
