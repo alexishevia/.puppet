@@ -211,3 +211,9 @@ nnoremap ; :
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 1
+
+" should the browser window pop-up upon previewing
+let g:livedown_open = 1
