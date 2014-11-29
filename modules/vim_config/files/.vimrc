@@ -217,3 +217,38 @@ let g:livedown_autorun = 1
 
 " should the browser window pop-up upon previewing
 let g:livedown_open = 1
+
+" set secure mode for reading .vimrc
+set secure
+
+" read .vimrc or .exrc on the current directory
+set exrc
+
+" ruler line
+set colorcolumn=80
+
+" how many columns a tab counts for
+set tabstop=2
+
+" how many columns text is indented with the reindent operations (<< and >>)
+set shiftwidth=2
+
+" amount of columns vim uses when you hit Tab in insert mode
+set softtabstop=2
+
+" convert tabs to spaces
+:set expandtab
+
+" highlight leading tabs
+augroup unwantedchars
+  autocmd!
+  :autocmd BufWinEnter * match UnwantedChars /^\t\+/
+augroup END
+:highlight UnwantedChars ctermbg=darkgreen guibg=darkgreen
+
+" display tabs and trailing spaces
+set listchars=tab:>-,trail:~
+set list
+
+" use 4 spaces for python files
+au FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
