@@ -247,5 +247,3 @@ au FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=
 
 " highlight current line
 set cursorline
-:hi CursorLine   cterm=NONE ctermbg=#2563ad ctermfg=white guibg=#2563ad guifg=white
-
