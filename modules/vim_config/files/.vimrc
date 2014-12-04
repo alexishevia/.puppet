@@ -43,9 +43,6 @@ endfun
 "remove trailing whitespace on file save:
 autocmd BufWritePre * :call <SID>TrimWhiteSpace()
 
-" set filename for localrc
-let g:localrc_filename = ".local.vimrc"
-
 " enable mouse in terminal mode
 set mouse=a
 set ttym=xterm2
@@ -80,7 +77,6 @@ let g:ctrlp_user_command = {
 
 " make NERDTree ignore public folder
 "let NERDTreeIgnore = ['\public\/*$']
-
 
 " show hidden files on NERDTree
 let NERDTreeShowHidden=1
@@ -130,10 +126,6 @@ if has("multi_byte")
   setglobal fileencoding=utf-8           " change default file encoding when writing new files
   set termencoding=utf-8
 endif
-
-" disable filetype based indentation and use smartindent
-" filetype indent off
-" set smartindent
 
 " use F8 to move tab left
 map <F8> :execute "tabmove" tabpagenr() - 2 <CR>
