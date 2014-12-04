@@ -244,3 +244,8 @@ set list
 
 " use 4 spaces for python files
 au FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
+" highlight current line
+set cursorline
+:hi CursorLine   cterm=NONE ctermbg=#2563ad ctermfg=white guibg=#2563ad guifg=white
+
