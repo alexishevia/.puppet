@@ -247,3 +247,9 @@ au FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=
 
 " highlight current line
 set cursorline
+
+" syntastic settings
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_highlighting = 0
+let g:syntastic_python_checkers=['pylama']
+let g:syntastic_javascript_checkers=['jsxhint']
