@@ -1,0 +1,12 @@
+" don't convert tabs to spaces
+:set noexpandtab
+
+" don't display tabs and trailing spaces
+set nolist
+
+" highlight leading and trailing whitespace
+augroup unwantedchars
+	autocmd!
+	:autocmd BufWinEnter * match UnwantedChars /^\s* \s*\|\s\+$/
+augroup END
+:highlight UnwantedChars ctermbg=darkgreen guibg=darkgreen
