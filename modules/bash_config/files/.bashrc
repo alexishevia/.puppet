@@ -116,6 +116,9 @@ PATH=$PATH:$HOME/adt-bundle/sdk/platform-tools
 # add genymotion tools to path
 PATH=$PATH:$HOME/genymotion
 
+# add nvm to path
+source ~/.nvm/nvm.sh
+
 # define JAVA_HOME
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
