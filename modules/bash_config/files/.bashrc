@@ -122,6 +122,9 @@ source ~/.nvm/nvm.sh
 # define JAVA_HOME
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
+# load avn
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
+
 # use vi mode in bash
 set -o vi
 
