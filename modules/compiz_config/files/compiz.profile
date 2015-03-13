@@ -105,7 +105,7 @@ s0_detect_outputs = true
 s0_outputs = 640x480+0+0;
 s0_click_to_focus = true
 s0_raise_on_click = true
-s0_autoraise = false
+s0_autoraise = true
 s0_autoraise_delay = 500
 s0_focus_prevention_level = 1
 s0_focus_prevention_match = !(class=Polkit-gnome-authentication-agent-1)
@@ -131,7 +131,7 @@ s0_toggle_window_maximized_button = Disabled
 s0_toggle_window_maximized_horizontally_key = Disabled
 s0_toggle_window_maximized_vertically_key = Disabled
 s0_toggle_window_shaded_key = <Control><Alt>s
-s0_hsize = 1
+s0_hsize = 3
 s0_vsize = 1
 
 [resize]
