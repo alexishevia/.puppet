@@ -4,4 +4,4 @@ include ack_config
 include postgres_config
 include terminator_config
 include bash_config
-#include compiz_config
+include compiz_config
