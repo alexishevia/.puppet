@@ -1,5 +1,5 @@
 # Alexis Hevia's puppet files
-These puppet files should allow me to reconstruct my entire development environment on a blank Ubuntu 12.04 distribution
+These puppet files should allow me to reconstruct my entire development environment on a blank Ubuntu 12.04 distribution (or 14.04 distribution with gnome-fallback mode)
 
 ## How To Use
 ```
