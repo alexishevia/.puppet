@@ -1,6 +1,7 @@
 $mainUser = "alexishevia"
 
 $desiredPackages = [
+  'curl',
   'build-essential',
   'git',
   'git-core',
