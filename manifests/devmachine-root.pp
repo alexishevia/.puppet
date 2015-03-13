@@ -16,7 +16,9 @@ $desiredPackages = [
   'libwebkitgtk-1.0-0',
   'unrar',
   'compizconfig-settings-manager',
-  's3cmd'
+  's3cmd',
+  'gnome-do',
+  'gnome-do-plugins'
 ]
 
 $undesiredPackages = ['avahi-daemon']
