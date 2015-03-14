@@ -20,7 +20,8 @@ $desiredPackages = [
   's3cmd',
   'gnome-do',
   'gnome-do-plugins',
-  'compiz-plugins'
+  'compiz-plugins',
+  'sni-qt:i386'
 ]
 
 $undesiredPackages = ['avahi-daemon']
