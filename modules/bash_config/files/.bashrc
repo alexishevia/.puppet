@@ -135,10 +135,6 @@ PS1='$PWD
 # add local node_modules binaries to PATH
 PATH=$PATH:./node_modules/.bin
 
-# Make Caps Lock an additional ESC
-# (for other options check out `man 7 xkeyboard-config`)
-/usr/bin/setxkbmap -option "caps:escape"
-
 #---------------------------------------
 # Docker Shortcuts
 #---------------------------------------

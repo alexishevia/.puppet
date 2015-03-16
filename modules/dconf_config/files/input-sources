@@ -1,0 +1,4 @@
+[/]
+current=uint32 0
+sources=[('xkb', 'us+intl')]
+xkb-options=['caps:escape']
