@@ -22,7 +22,8 @@ $desiredPackages = [
   'gnome-do-plugins',
   'compiz-plugins',
   'sni-qt:i386',
-  'gcolor2'
+  'gcolor2',
+  'screenruler'
 ]
 
 $undesiredPackages = ['avahi-daemon']
