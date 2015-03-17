@@ -21,7 +21,8 @@ $desiredPackages = [
   'gnome-do',
   'gnome-do-plugins',
   'compiz-plugins',
-  'sni-qt:i386'
+  'sni-qt:i386',
+  'gcolor2'
 ]
 
 $undesiredPackages = ['avahi-daemon']
