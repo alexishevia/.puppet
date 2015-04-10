@@ -116,14 +116,8 @@ PATH=$PATH:$HOME/adt-bundle/sdk/platform-tools
 # add genymotion tools to path
 PATH=$PATH:$HOME/genymotion
 
-# add nvm to path
-source ~/.nvm/nvm.sh
-
 # define JAVA_HOME
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
-
-# load avn
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
 
 # use vi mode in bash
 set -o vi
@@ -131,6 +125,16 @@ set -o vi
 # multi-line prompt
 PS1='$PWD
 ==> '
+
+#---------------------------------------
+# Node
+#---------------------------------------
+
+# add nvm to path
+source ~/.nvm/nvm.sh
+
+# load avn (automatic version switching for node)
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
 
 # add local node_modules binaries to PATH
 PATH=$PATH:./node_modules/.bin
@@ -140,3 +144,13 @@ PATH=$PATH:./node_modules/.bin
 #---------------------------------------
 alias dockerRemoveStoppedContainers='docker rm $(docker ps -a -q)'
 alias dockerRemoveUntaggedImages='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+
+#---------------------------------------
+# RVM
+#---------------------------------------
+
+# add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

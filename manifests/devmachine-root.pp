@@ -6,7 +6,6 @@ $desiredPackages = [
   'git',
   'git-core',
   'gitk',
-  'vim-gnome',
   'ack-grep',
   'ncurses-term',
   'xclip',
@@ -23,10 +22,11 @@ $desiredPackages = [
   'compiz-plugins',
   'sni-qt:i386',
   'gcolor2',
-  'screenruler'
+  'screenruler',
+  'vim-gtk'
 ]
 
-$undesiredPackages = ['avahi-daemon']
+$undesiredPackages = ['avahi-daemon', 'vim', 'vim-gnome']
 
 package { $desiredPackages:
   ensure => installed
