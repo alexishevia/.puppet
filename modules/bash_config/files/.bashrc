@@ -116,9 +116,6 @@ PATH=$PATH:$HOME/adt-bundle/sdk/platform-tools
 # add genymotion tools to path
 PATH=$PATH:$HOME/genymotion
 
-# add elasticbean tools to path
-PATH=$PATH:$HOME/AWS-ElasticBeanstalk/eb/linux/python2.7
-
 # define JAVA_HOME
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
