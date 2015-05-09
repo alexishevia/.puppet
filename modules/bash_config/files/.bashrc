@@ -119,6 +119,9 @@ PATH=$PATH:$HOME/genymotion
 # define JAVA_HOME
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
+# user vim as the default editor
+export EDITOR=/usr/bin/vim
+
 # use vi mode in bash
 set -o vi
 
@@ -154,3 +157,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+#---------------------------------------
+# Python
+#---------------------------------------
+
+. /usr/local/bin/virtualenvwrapper.sh
