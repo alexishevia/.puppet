@@ -23,7 +23,9 @@ $desiredPackages = [
   'sni-qt:i386',
   'gcolor2',
   'screenruler',
-  'vim-gtk'
+  'vim-gtk',
+  'android-tools-adb',
+  'android-tools-fastboot'
 ]
 
 $undesiredPackages = ['avahi-daemon', 'vim', 'vim-gnome']

@@ -109,13 +109,6 @@ fi
 # enable 256-color support in terminal
 TERM=xterm-256color
 
-# add android tools to path
-PATH=$PATH:$HOME/adt-bundle/sdk/tools
-PATH=$PATH:$HOME/adt-bundle/sdk/platform-tools
-
-# add genymotion tools to path
-PATH=$PATH:$HOME/genymotion
-
 # define JAVA_HOME
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
