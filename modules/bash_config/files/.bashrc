@@ -156,3 +156,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 #---------------------------------------
 
 . /usr/local/bin/virtualenvwrapper.sh
+
+#---------------------------------------
+# PHP
+#---------------------------------------
+
+source ~/.phpbrew/bashrc
