@@ -10,10 +10,10 @@
   split_vert = <Ctrl>D
   next_tab = <Ctrl>Right
   prev_tab = <Ctrl>Left
-  go_up = <Ctrl><Alt>Up
-  go_down = <Ctrl><Alt>Down
-  go_left = <Ctrl><Alt>Left
-  go_right = <Ctrl><Alt>Right
+  go_up = <Ctrl>k
+  go_down = <Ctrl>j
+  go_left = <Ctrl>h
+  go_right = <Ctrl>l
   move_tab_left = <Ctrl><Shift>Left
   move_tab_right = <Ctrl><Shift>Right
 [profiles]
