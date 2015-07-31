@@ -5,7 +5,7 @@ class compiz_config {
   file { "$compizFolder":
     owner => "$id",
     group => "$id",
-    mode => 755,
+    mode => "755",
     ensure => directory
   }
 
@@ -13,7 +13,7 @@ class compiz_config {
   file { "$compizFolder/exportCompizProfile.py":
     owner => "$id",
     group => "$id",
-    mode => 755,
+    mode => "755",
     source => "puppet:///modules/compiz_config/exportCompizProfile.py",
   }
 
@@ -21,7 +21,7 @@ class compiz_config {
   file { "$compizFolder/importCompizProfile.py":
     owner => "$id",
     group => "$id",
-    mode => 755,
+    mode => "755",
     source => "puppet:///modules/compiz_config/importCompizProfile.py",
   }
 
@@ -29,7 +29,7 @@ class compiz_config {
   file { "$compizFolder/compiz.profile":
     owner => "$id",
     group => "$id",
-    mode => 754,
+    mode => "754",
     source => "puppet:///modules/compiz_config/compiz.profile",
   }
 

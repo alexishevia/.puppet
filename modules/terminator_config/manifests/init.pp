@@ -6,7 +6,7 @@ class terminator_config {
   file { "/home/$id/.config/terminator/config":
     owner => "$id",
     group => "$id",
-    mode => 755,
+    mode => "755",
     source => "puppet:///modules/terminator_config/terminator_config",
   }
 }

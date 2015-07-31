@@ -5,7 +5,7 @@ class dconf_config {
   file { "$dconfFolder":
     owner => "$id",
     group => "$id",
-    mode => 755,
+    mode => "755",
     ensure => directory
   }
 
@@ -13,7 +13,7 @@ class dconf_config {
   file { "$dconfFolder/input-sources":
     owner => "$id",
     group => "$id",
-    mode => 754,
+    mode => "754",
     source => "puppet:///modules/dconf_config/input-sources",
   }
 
