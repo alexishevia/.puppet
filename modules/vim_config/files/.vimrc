@@ -236,6 +236,9 @@ augroup END
 set listchars=tab:>-,trail:~
 set list
 
+" change color for tabs and trailing spaces
+hi SpecialKey ctermfg=66 guifg=#649A9A
+
 " use 4 spaces for python files
 au FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
