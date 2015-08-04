@@ -16,11 +16,4 @@ class vim_config {
     source => "puppet:///modules/vim_config/.vimrc",
   }
 
-  file { "/home/$id/.local.vimrc":
-    owner => "$id",
-    group => "$id",
-    mode => "644",
-    source => "puppet:///modules/vim_config/.local.vimrc.using_spaces",
-  }
-
 }

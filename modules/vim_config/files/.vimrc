@@ -22,12 +22,6 @@ set guifont=Monaco:h12
 " enable statusline
 set laststatus=2
 
-" set status line
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
-
-" make tab labels visible always
-set showtabline=2
-
 " define a "remove trailing whitespace" function:
 fun! <SID>TrimWhiteSpace()
   " Don't strip on these filetypes
@@ -60,6 +54,9 @@ inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " auto-complete <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" use ,p to do fuzzy filename search
+map <Leader>p :CtrlP<Enter>
+
 " make ctrlP open files on new tab
 let g:ctrlp_prompt_mappings = {
       \ 'AcceptSelection("e")': ['<c-t>'],
@@ -75,20 +72,11 @@ let g:ctrlp_user_command = {
   \ 'fallback': 'find %s -type f'
   \ }
 
-" make NERDTree ignore public folder
-"let NERDTreeIgnore = ['\public\/*$']
-
 " show hidden files on NERDTree
 let NERDTreeShowHidden=1
 
 " use old folder markers (avoids issues with some terminals)
 let g:NERDTreeDirArrows=0
-
-" use ,p to do fuzzy search
-map <Leader>p :CtrlP<Enter>
-
-" use ,f to search for a string inside current project using Ack
-map <Leader>f :tabnew<Enter>:Ack<space>
 
 " use ,n to toggle nerdtreetabs
 map <Leader>n :NERDTreeToggle<Enter>
@@ -213,34 +201,12 @@ set exrc
 " ruler line
 set colorcolumn=80
 
-" how many columns a tab counts for
-set tabstop=2
-
-" how many columns text is indented with the reindent operations (<< and >>)
-set shiftwidth=2
-
-" amount of columns vim uses when you hit Tab in insert mode
-set softtabstop=2
-
-" convert tabs to spaces
-:set expandtab
-
-" highlight leading tabs
-augroup unwantedchars
-  autocmd!
-  :autocmd BufWinEnter * match UnwantedChars /^\t\+/
-augroup END
-:highlight UnwantedChars ctermbg=darkgreen guibg=darkgreen
-
 " display tabs and trailing spaces
 set listchars=tab:>-,trail:~
 set list
 
 " change color for tabs and trailing spaces
 hi SpecialKey ctermfg=66 guifg=#649A9A
-
-" use 4 spaces for python files
-au FileType python setl autoindent tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 " highlight current line
 set cursorline
@@ -256,3 +222,21 @@ vmap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" how many columns a tab counts for
+"set tabstop=2
+
+" how many columns text is indented with the reindent operations (<< and >>)
+"set shiftwidth=2
+
+" amount of columns vim uses when you hit Tab in insert mode
+"set softtabstop=2
+
+" convert tabs to spaces
+"set expandtab
+
+" highlight unwanted chars tabs (you can change UnwantedChars definition to
+" suit your file)
+highlight UnwantedChars ctermbg=darkgreen guibg=darkgreen
+match UnwantedChars /^\t\+/ " leading tabs are unwanted
+match UnwantedChars /^\s* \s*\|\s\+$/ " leading and trailing whitespace is unwanted
