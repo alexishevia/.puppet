@@ -22,7 +22,7 @@ set guifont=Monaco:h12
 " enable statusline
 set laststatus=2
 
-" define a "remove trailing whitespace" function:
+" define a 'remove trailing whitespace' function:
 fun! <SID>TrimWhiteSpace()
   " Don't strip on these filetypes
   if &ft =~ 'markdown\|mkd'
@@ -223,6 +223,27 @@ vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+" by default, don't highlight anything
+match none
+
+" define a 'highlight leading tabs' function:
+function! HighlightTabs()
+  highlight UnwantedChars ctermbg=darkgreen guibg=darkgreen
+  match UnwantedChars /^\t\+/ " leading tabs are unwanted
+endfunction
+
+" define a 'highlight leading and trailing whitespace' function:
+function! HighlightSpaces()
+  highlight UnwantedChars ctermbg=darkgreen guibg=darkgreen
+  match UnwantedChars /^\s* \s*\|\s\+$/ " leading and trailing whitespace is unwanted
+endfunction
+
+" use ,ht to highlight leading tabs
+map <Leader>ht :call HighlightTabs()<CR>
+
+" use ,hs to highlight leading spaces
+map <Leader>hs :call HighlightSpaces()<CR>
+
 " how many columns a tab counts for
 "set tabstop=2
 
@@ -235,8 +256,3 @@ nmap ga <Plug>(EasyAlign)
 " convert tabs to spaces
 "set expandtab
 
-" highlight unwanted chars tabs (you can change UnwantedChars definition to
-" suit your file)
-highlight UnwantedChars ctermbg=darkgreen guibg=darkgreen
-match UnwantedChars /^\t\+/ " leading tabs are unwanted
-match UnwantedChars /^\s* \s*\|\s\+$/ " leading and trailing whitespace is unwanted
