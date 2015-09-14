@@ -35,7 +35,9 @@ fun! <SID>TrimWhiteSpace()
 endfun
 
 "remove trailing whitespace on file save:
-autocmd BufWritePre * :call <SID>TrimWhiteSpace()
+augroup trimWhitespace
+  autocmd BufWritePre * :call <SID>TrimWhiteSpace()
+augroup END
 
 " enable mouse in terminal mode
 set mouse=a
