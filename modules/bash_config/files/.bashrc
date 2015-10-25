@@ -142,16 +142,6 @@ alias dockerRemoveStoppedContainers='docker rm $(docker ps -a -q)'
 alias dockerRemoveUntaggedImages='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
 
 #---------------------------------------
-# RVM
-#---------------------------------------
-
-# add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-#---------------------------------------
 # Python
 #---------------------------------------
 
