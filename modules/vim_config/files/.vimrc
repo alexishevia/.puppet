@@ -19,6 +19,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'aquach/vim-http-client'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sheerun/vim-polyglot'
+Plug 'tmhedberg/matchit'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -238,8 +239,6 @@ let g:syntastic_enable_highlighting = 0
 let g:syntastic_python_checkers=['pylama']
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_coffee_checkers=['coffeelint']
-
-
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
