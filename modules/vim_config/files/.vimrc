@@ -1,8 +1,27 @@
-" load pathogen
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-Helptags
+" load vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'bkad/CamelCaseMotion'
+Plug 'kien/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-unimpaired'
+Plug 'ivalkeen/nerdtree-execute'
+Plug 'bling/vim-airline'
+Plug 'junegunn/vim-easy-align'
+Plug 'aquach/vim-http-client'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'sheerun/vim-polyglot'
+
+" Add plugins to &runtimepath
+call plug#end()
 
 " use line numbers
 set number
