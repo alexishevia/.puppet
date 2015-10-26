@@ -154,6 +154,9 @@ map <F9> :execute "tabmove" tabpagenr() <CR>
 " make sure wrap is not turned off by vimdiff
 au VimEnter * if &diff | execute 'windo set wrap' | endif
 
+" force fugitive diff to use vertical split
+set diffopt=filler,vertical
+
 " set filetypes for common extensions
 au BufNewFile,BufRead *.pp set filetype=ruby
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
