@@ -1,7 +1,6 @@
 " load vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'bkad/CamelCaseMotion'
 Plug 'kien/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'haya14busa/incsearch.vim'
@@ -164,15 +163,6 @@ au BufNewFile,BufRead *.jbuilder set filetype=ruby
 
 " disable markdown folding
 let g:vim_markdown_folding_disabled=1
-
-" use camelcase motion for moving between words
-map w <Plug>CamelCaseMotion_w
-map b <Plug>CamelCaseMotion_b
-map e <Plug>CamelCaseMotion_e
-sunmap w
-sunmap b
-sunmap e
-set iskeyword+=-
 
 " remap U to real undo
 map U :later<Enter>
