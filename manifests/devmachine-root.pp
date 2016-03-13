@@ -9,7 +9,6 @@ $desiredPackages = [
   'ack-grep',
   'ncurses-term',
   'xclip',
-  'terminator',
   'dconf-tools',
   'unzip',
   'libjpeg62',
@@ -25,10 +24,11 @@ $desiredPackages = [
   'screenruler',
   'vim-gtk',
   'android-tools-adb',
-  'android-tools-fastboot'
+  'android-tools-fastboot',
+  'tmux'
 ]
 
-$undesiredPackages = ['avahi-daemon', 'vim', 'vim-gnome']
+$undesiredPackages = ['avahi-daemon', 'vim', 'vim-gnome', 'terminator']
 
 package { $desiredPackages:
   ensure => installed
