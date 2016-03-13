@@ -7,4 +7,11 @@ class bin_config {
     source => "puppet:///modules/bin_config/tmux_ave",
   }
 
+  file { "/home/$id/bin/tmux_rosetta":
+    owner => "$id",
+    group => "$id",
+    mode => "755",
+    source => "puppet:///modules/bin_config/tmux_rosetta",
+  }
+
 }
