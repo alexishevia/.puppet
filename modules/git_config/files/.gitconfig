@@ -14,5 +14,6 @@
   ignore = update-index --assume-unchanged
   unignore = update-index --no-assume-unchanged
   ignored = !git ls-files -v | grep ^[a-z]
+  pf = push --force-with-lease
 [core]
   editor = /usr/bin/vim
