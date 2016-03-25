@@ -20,8 +20,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'aquach/vim-http-client'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sheerun/vim-polyglot'
+Plug 'ciaranm/detectindent'
 Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
@@ -268,6 +268,17 @@ map <Leader>ht :call HighlightTabs()<CR>
 " use ,hs to highlight leading spaces
 map <Leader>hs :call HighlightSpaces()<CR>
 
+" prefer 'expandtab' to 'noexpandtab' when no detection is possible
+:let g:detectindent_preferred_expandtab = 1
+
+" specify a preferred indent level when no detection is possible
+:let g:detectindent_preferred_indent = 2
+
+" run detect indent when starting to edit a new buffer
+augroup detectIndentOnOpen
+  autocmd BufReadPost * :DetectIndent
+augroup END
+
 " how many columns a tab counts for
 "set tabstop=2
 
@@ -279,4 +290,3 @@ map <Leader>hs :call HighlightSpaces()<CR>
 
 " convert tabs to spaces
 "set expandtab
-
