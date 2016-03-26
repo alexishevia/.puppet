@@ -7,3 +7,4 @@ include compiz_config
 include dconf_config
 include tmux_config
 include bin_config
+include rbenv_config
