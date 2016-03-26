@@ -13,7 +13,6 @@ then
     # editor window
     tmux new -s rosetta -n editor -d
     tmux send-keys -t rosetta:editor 'cd ~/Projects/Ubiqua/rosetta' C-m
-    tmux send-keys -t rosetta:editor '. /usr/local/bin/virtualenvwrapper.sh' C-m
     tmux send-keys -t rosetta:editor 'workon rosetta' C-m
     tmux send-keys -t rosetta:editor 'clear' C-m
     tmux send-keys -t rosetta:editor 'git status' C-m
@@ -22,7 +21,6 @@ then
     # python window
     tmux new-window -t rosetta -n python
     tmux send-keys -t rosetta:python 'cd ~/Projects/Ubiqua/rosetta' C-m
-    tmux send-keys -t rosetta:python '. /usr/local/bin/virtualenvwrapper.sh' C-m
     tmux send-keys -t rosetta:python 'workon rosetta' C-m
     tmux send-keys -t rosetta:python 'clear' C-m
     tmux send-keys -t rosetta:python 'python server.py'
@@ -30,7 +28,6 @@ then
     # bash window
     tmux new-window -t rosetta -n bash
     tmux send-keys -t rosetta:bash 'cd ~/Projects/Ubiqua/rosetta' C-m
-    tmux send-keys -t rosetta:bash '. /usr/local/bin/virtualenvwrapper.sh' C-m
     tmux send-keys -t rosetta:bash 'workon rosetta' C-m
     tmux send-keys -t rosetta:bash 'clear' C-m
 fi
