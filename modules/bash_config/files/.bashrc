@@ -93,6 +93,7 @@ PATH=$PATH:./node_modules/.bin
 #---------------------------------------
 alias dockerRemoveStoppedContainers='docker rm $(docker ps -a -q)'
 alias dockerRemoveUntaggedImages='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+alias dockerRemoveOrphanVolumes='docker volume rm $(docker volume ls -qf dangling=true)'
 
 #---------------------------------------
 # Python
