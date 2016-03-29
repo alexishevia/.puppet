@@ -1,3 +1,6 @@
+" set 256 color terminal
+set term=screen-256color
+
 " load vim-plug
 call plug#begin('~/.vim/plugged')
 
