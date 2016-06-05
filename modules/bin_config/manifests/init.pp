@@ -1,17 +1,20 @@
 class bin_config {
 
-  file { "/home/$id/bin/tmux_skyroam":
-    owner => "$id",
-    group => "$id",
-    mode => "755",
-    source => "puppet:///modules/bin_config/tmux_skyroam",
-  }
+  $executables = [
+    'tmux_hotlist',
+    'tmux_skyroam',
+    'sp',
+  ]
 
-  file { "/home/$id/bin/sp":
-    owner => "$id",
-    group => "$id",
-    mode => "755",
-    source => "puppet:///modules/bin_config/sp",
+  each($executables) |$file| {
+
+    file { "/home/$id/bin/$file":
+      owner => "$id",
+      group => "$id",
+      mode => "755",
+      source => "puppet:///modules/bin_config/$file",
+    }
+
   }
 
 }

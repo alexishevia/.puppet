@@ -55,7 +55,7 @@ set laststatus=2
 " define a 'remove trailing whitespace' function:
 fun! <SID>TrimWhiteSpace()
   " Don't strip on these filetypes
-  if &ft =~ 'markdown\|mkd'
+  if &ft =~ 'markdown\|mkd\|vmail'
     return
   endif
   let l = line(".")

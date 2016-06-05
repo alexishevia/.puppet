@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# if 'hotlist' session exists, attach to it.
+# otherwise, create it with the following windows:
+# - mail: vmail
+
+tmux has-session -t hotlist
+
+if [ $? != 0 ]
+then
+    # mail window
+    tmux new -s hotlist -n mail -d
+    tmux send-keys -t hotlist:mail 'vmail' C-m
+fi
+
+# select window 'mail'
+tmux select-window -t hotlist:mail
+
+# attach to session
+tmux attach -t hotlist
