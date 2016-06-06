@@ -26,7 +26,8 @@ $desiredPackages = [
   'android-tools-adb',
   'android-tools-fastboot',
   'tmux',
-  'rbenv'
+  'rbenv',
+  'tidy'
 ]
 
 $undesiredPackages = ['avahi-daemon', 'vim', 'vim-gnome', 'terminator']

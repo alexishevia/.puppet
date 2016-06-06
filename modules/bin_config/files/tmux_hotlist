@@ -3,6 +3,7 @@
 # if 'hotlist' session exists, attach to it.
 # otherwise, create it with the following windows:
 # - mail: vmail
+# - rss: vnews
 
 tmux has-session -t hotlist
 
@@ -11,6 +12,10 @@ then
     # mail window
     tmux new -s hotlist -n mail -d
     tmux send-keys -t hotlist:mail 'vmail' C-m
+
+    # rss window
+    tmux new-window -t hotlist -n rss
+    tmux send-keys -t hotlist:rss 'vnews' C-m
 fi
 
 # select window 'mail'

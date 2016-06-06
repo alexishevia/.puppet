@@ -1,0 +1,52 @@
+host: localhost
+database: vnews
+username: root
+password:
+
+General News
+http://feeds.feedburner.com/wekeroad/EeKc
+http://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots
+http://martinfowler.com/feed.atom
+http://www.aaronsw.com/2002/feeds/pgessays.rss
+http://blog.keithcirkel.co.uk/rss/
+http://www.webmonkey.com/feed/
+http://feeds.feedburner.com/devalexishevia
+http://rossyboop.blogspot.com/feeds/posts/default
+http://alexishevia.blogspot.com/feeds/posts/default
+http://feeds.feedburner.com/cloudfour
+http://feeds.feedburner.com/blogspot/RWHT
+http://feeds.feedburner.com/codinghorror
+http://feeds.feedburner.com/addyosmani
+http://googlewave.blogspot.com/feeds/posts/default
+http://torvalds-family.blogspot.com/feeds/posts/default
+http://feeds.feedburner.com/paul-irish
+http://tecnomenia.com/feed
+http://feeds.feedburner.com/CrowdInteractiveTechBlog
+http://feeds.feedburner.com/JohnResig
+http://www.joelonsoftware.com/rss.xml
+http://gdgpanamacity.blogspot.com/feeds/posts/default
+http://ryancarson.com/rss
+https://aerotwist.com/blog/feed/
+http://cascostation.com/feed/
+http://facebook.github.io/react/feed.xml
+http://feeds.feedburner.com/usevim
+http://blog.hackership.org/atom.xml
+http://www.commitstrip.com/en/feed/
+http://www.desarrolloweb.com/rss/agenda_rss.php
+http://www.genbetadev.com/tag/eventos-para-desarrolladores/rss2.xml
+http://blog-machinarium021.rhcloud.com/rss/
+http://javascriptweekly.com/rss/1lo7h34g
+http://nodeweekly.com/rss/18i1fil2
+http://postgresweekly.com/rss/24ehm2i5
+http://html5weekly.com/rss/2309p274
+http://dbweekly.com/rss/11g7l2cc
+http://www.admios.com/admios-blog?format=RSS
+https://ayaita.wordpress.com/feed/
+http://lithostech.com/feed.xml
+http://modern-sql.com/feed
+https://ubiquame.wordpress.com/feed/
+https://reactjsnews.com/
+http://yoworkeo.blogspot.com/feeds/posts/default
+http://eflorenzano.com/atom.xml
+http://www.fundacionproed.net/feed/
+
