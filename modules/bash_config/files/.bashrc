@@ -110,3 +110,9 @@ source ~/.phpbrew/bashrc
 #---------------------------------------
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)" # load rbenv automatically
+
+#---------------------------------------
+# Todo.txt
+#---------------------------------------
+export PATH="$HOME/bin/todo.txt_cli:$PATH"
+source "$HOME/bin/todo.txt_cli/todo_completion"
