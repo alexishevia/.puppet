@@ -25,14 +25,22 @@ class bin_config {
 
   }
 
-  file { "/home/$id/bin/todo.txt_cli":
-    owner => "$id",
-    group => "$id",
-    mode => "755",
-    ensure => directory,
-    recurse => true,
-    source => "puppet:///modules/bin_config/todo.txt_cli",
-    require => File["/home/$id/bin"],
+  $directories = [
+    'todo.txt_cli',
+  ]
+
+  each($directories) |$dir| {
+
+    file { "/home/$id/bin/$dir":
+      owner => "$id",
+      group => "$id",
+      mode => "755",
+      ensure => directory,
+      recurse => true,
+      source => "puppet:///modules/bin_config/$dir",
+      require => File["/home/$id/bin"],
+    }
+
   }
 
 }
