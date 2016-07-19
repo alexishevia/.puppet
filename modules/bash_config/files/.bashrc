@@ -70,6 +70,10 @@ PS1='$PWD
 # add ~/bin to PATH
 PATH=$PATH:~/bin
 
+# fix perl locale warning
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 #---------------------------------------
 # JAVA
 #---------------------------------------
