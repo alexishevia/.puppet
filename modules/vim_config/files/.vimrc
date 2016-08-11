@@ -151,7 +151,7 @@ endif
 map <F8> :execute "tabmove" tabpagenr() - 2 <CR>
 
 " use F9 to move tab right
-map <F9> :execute "tabmove" tabpagenr() <CR>
+map <F9> :execute "tabmove" tabpagenr() + 1 <CR>
 
 " make sure wrap is not turned off by vimdiff
 au VimEnter * if &diff | execute 'windo set wrap' | endif
