@@ -1,7 +1,7 @@
 class bin_config {
 
   $executables = [
-    'tmux_hotlist',
+    'tmux_docs',
     'tmux_skyroam',
     'sp',
   ]

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# if 'docs' session exists, attach to it.
+# otherwise, create it with the following windows:
+# - editor: vim
+
+tmux has-session -t docs
+
+if [ $? != 0 ]
+then
+    # editor window
+    tmux new -s docs -n editor -d
+    tmux send-keys -t docs:editor 'cd ~/Dropbox/docs' C-m
+    tmux send-keys -t docs:editor 'vim .' C-m
+fi
+
+# select window 'editor'
+tmux select-window -t docs:editor
+
+# attach to session
+tmux attach -t docs
