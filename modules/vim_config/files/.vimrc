@@ -293,3 +293,10 @@ augroup END
 
 " convert tabs to spaces
 "set expandtab
+
+" don't create backup files
+set nobackup
+set nowritebackup
+
+" save backup files to a custom directory
+" set backupdir=~/.vim/backup
