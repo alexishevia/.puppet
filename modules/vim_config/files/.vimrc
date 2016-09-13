@@ -282,6 +282,13 @@ augroup detectIndentOnOpen
   autocmd BufReadPost * :DetectIndent
 augroup END
 
+" define a function to easily change indent size
+function! IndentSize(len)
+  execute "set tabstop =".a:len
+  execute "set shiftwidth =".a:len
+  execute "set softtabstop =".a:len
+endfunction
+
 " how many columns a tab counts for
 "set tabstop=2
 
