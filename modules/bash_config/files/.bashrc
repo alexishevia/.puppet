@@ -81,6 +81,13 @@ export LC_ALL=en_US.UTF-8
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
 #---------------------------------------
+# Android
+#---------------------------------------
+# add android tools to path
+PATH=$PATH:~/android-sdk/tools
+PATH=$PATH:~/android-sdk/platform-tools
+
+#---------------------------------------
 # Node
 #---------------------------------------
 # add nvm to path
