@@ -78,7 +78,7 @@ export LC_ALL=en_US.UTF-8
 # JAVA
 #---------------------------------------
 # define JAVA_HOME
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
 #---------------------------------------
 # Node
