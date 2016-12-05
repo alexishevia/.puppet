@@ -1,3 +1,0 @@
-fixtures:
-  symlinks:
-    android: "#{source_dir}"
