@@ -3,7 +3,6 @@ class bin_config {
   $executables = [
     'tmux_docs',
     'tmux_skyroam',
-    'sp',
   ]
 
   file { "/home/$id/bin":
@@ -26,7 +25,6 @@ class bin_config {
   }
 
   $directories = [
-    'todo.txt_cli',
   ]
 
   each($directories) |$dir| {
