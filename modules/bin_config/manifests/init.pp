@@ -25,6 +25,7 @@ class bin_config {
   }
 
   $directories = [
+    'robomongo-0.9.0',
   ]
 
   each($directories) |$dir| {
