@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# if 'quanto-api' session exists, attach to it.
+# otherwise, create it with the following windows:
+# - editor: vim
+# - watch: npm start
+
+tmux has-session -t quanto-api
+
+if [ $? != 0 ]
+then
+    # editor window
+    tmux new -s quanto-api -n editor -d
+    tmux send-keys -t quanto-api:editor 'cd ~/Projects/Quanto/quanto-api' C-m
+    tmux send-keys -t quanto-api:editor 'clear' C-m
+    tmux send-keys -t quanto-api:editor 'git status' C-m
+    tmux send-keys -t quanto-api:editor 'vim .'
+
+    # docker window
+    tmux new-window -t quanto-api -n docker
+    tmux send-keys -t quanto-api:docker 'cd ~/Projects/Quanto/quanto-api' C-m
+    tmux send-keys -t quanto-api:docker 'clear' C-m
+    tmux send-keys -t quanto-api:docker 'npm start'
+fi
+
+# select window 'editor'
+tmux select-window -t quanto-api:editor
+
+# attach to session
+tmux attach -t quanto-api

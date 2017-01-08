@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# if 'fox' session exists, attach to it.
+# otherwise, create it with the following windows:
+# - editor: vim
+# - docker: start docker-compose
+
+tmux has-session -t fox
+
+if [ $? != 0 ]
+then
+    # editor window
+    tmux new -s fox -n editor -d
+    tmux send-keys -t fox:editor 'cd ~/Projects/X-Team/dcgapps' C-m
+    tmux send-keys -t fox:editor 'clear' C-m
+    tmux send-keys -t fox:editor 'git status' C-m
+    tmux send-keys -t fox:editor 'vim .'
+
+    # docker window
+    tmux new-window -t fox -n docker
+    tmux send-keys -t fox:docker 'cd ~/Projects/X-Team/dcgapps' C-m
+    tmux send-keys -t fox:docker 'clear' C-m
+    tmux send-keys -t fox:docker 'COMPOSE_HTTP_TIMEOUT=300 docker-compose up'
+fi
+
+# select window 'editor'
+tmux select-window -t fox:editor
+
+# attach to session
+tmux attach -t fox

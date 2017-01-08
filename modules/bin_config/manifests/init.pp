@@ -2,7 +2,8 @@ class bin_config {
 
   $executables = [
     'tmux_docs',
-    'tmux_skyroam',
+    'tmux_fox',
+    'tmux_quanto-api',
   ]
 
   file { "/home/$id/bin":
