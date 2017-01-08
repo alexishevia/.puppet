@@ -16,11 +16,11 @@ then
     tmux send-keys -t quanto-api:editor 'git status' C-m
     tmux send-keys -t quanto-api:editor 'vim .'
 
-    # docker window
-    tmux new-window -t quanto-api -n docker
-    tmux send-keys -t quanto-api:docker 'cd ~/Projects/Quanto/quanto-api' C-m
-    tmux send-keys -t quanto-api:docker 'clear' C-m
-    tmux send-keys -t quanto-api:docker 'npm start'
+    # watch window
+    tmux new-window -t quanto-api -n watch
+    tmux send-keys -t quanto-api:watch 'cd ~/Projects/Quanto/quanto-api' C-m
+    tmux send-keys -t quanto-api:watch 'clear' C-m
+    tmux send-keys -t quanto-api:watch 'npm start'
 fi
 
 # select window 'editor'
