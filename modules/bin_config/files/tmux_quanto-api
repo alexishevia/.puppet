@@ -4,6 +4,7 @@
 # otherwise, create it with the following windows:
 # - editor: vim
 # - watch: npm start
+# - db: database connection
 
 tmux has-session -t quanto-api
 
@@ -21,6 +22,12 @@ then
     tmux send-keys -t quanto-api:watch 'cd ~/Projects/Quanto/quanto-api' C-m
     tmux send-keys -t quanto-api:watch 'clear' C-m
     tmux send-keys -t quanto-api:watch 'npm start'
+
+    # db window
+    tmux new-window -t quanto-api -n db
+    tmux send-keys -t quanto-api:db 'cd ~/Projects/Quanto/quanto-api' C-m
+    tmux send-keys -t quanto-api:db 'clear' C-m
+    tmux send-keys -t quanto-api:db 'ENV=development npm run db:connect' C-m
 fi
 
 # select window 'editor'

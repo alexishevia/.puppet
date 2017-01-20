@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# if 'clients' session exists, attach to it.
+# otherwise, create it with the following windows:
+#   - editor: vim
+
+tmux has-session -t clients
+
+if [ $? != 0 ]
+then
+    # editor window
+    tmux new -s clients -n editor -d
+    tmux send-keys -t clients:editor 'cd ~/Dropbox/clients' C-m
+    tmux send-keys -t clients:editor 'vim .' C-m
+fi
+
+# select window 'editor'
+tmux select-window -t clients:editor
+
+# attach to session
+tmux attach -t clients

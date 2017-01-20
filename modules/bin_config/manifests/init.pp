@@ -1,7 +1,8 @@
 class bin_config {
 
   $executables = [
-    'tmux_docs',
+    'tmux_clients',
+    'tmux_knowledge',
     'tmux_fox',
     'tmux_quanto-api',
   ]

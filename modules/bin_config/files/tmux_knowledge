@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# if 'knowledge' session exists, attach to it.
+# otherwise, create it with the following windows:
+#   - editor: vim
+
+tmux has-session -t knowledge
+
+if [ $? != 0 ]
+then
+    # editor window
+    tmux new -s knowledge -n editor -d
+    tmux send-keys -t knowledge:editor 'cd ~/knowledge' C-m
+    tmux send-keys -t knowledge:editor 'vim .' C-m
+fi
+
+# select window 'editor'
+tmux select-window -t knowledge:editor
+
+# attach to session
+tmux attach -t knowledge
