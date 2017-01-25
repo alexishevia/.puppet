@@ -13,6 +13,7 @@ then
     # editor window
     tmux new -s quanto-api -n editor -d
     tmux send-keys -t quanto-api:editor 'cd ~/Projects/Quanto/quanto-api' C-m
+    tmux send-keys -t quanto-api:editor 'nvm use' C-m
     tmux send-keys -t quanto-api:editor 'clear' C-m
     tmux send-keys -t quanto-api:editor 'git status' C-m
     tmux send-keys -t quanto-api:editor 'vim .'
@@ -20,12 +21,14 @@ then
     # watch window
     tmux new-window -t quanto-api -n watch
     tmux send-keys -t quanto-api:watch 'cd ~/Projects/Quanto/quanto-api' C-m
+    tmux send-keys -t quanto-api:watch 'nvm use' C-m
     tmux send-keys -t quanto-api:watch 'clear' C-m
     tmux send-keys -t quanto-api:watch 'npm start'
 
     # db window
     tmux new-window -t quanto-api -n db
     tmux send-keys -t quanto-api:db 'cd ~/Projects/Quanto/quanto-api' C-m
+    tmux send-keys -t quanto-api:db 'nvm use' C-m
     tmux send-keys -t quanto-api:db 'clear' C-m
     tmux send-keys -t quanto-api:db 'ENV=development npm run db:connect' C-m
 fi
