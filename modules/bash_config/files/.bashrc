@@ -97,9 +97,6 @@ PATH=$PATH:~/android-sdk/platform-tools
 # add nvm to path
 source ~/.nvm/nvm.sh
 
-# load avn (automatic version switching for node)
-[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
-
 # add local node_modules binaries to PATH
 PATH=$PATH:./node_modules/.bin
 
