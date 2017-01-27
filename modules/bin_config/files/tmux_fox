@@ -14,6 +14,7 @@ then
     tmux send-keys -t fox:editor 'cd ~/Projects/X-Team/dcgapps' C-m
     tmux send-keys -t fox:editor 'nvm use' C-m
     tmux send-keys -t fox:editor 'clear' C-m
+    tmux send-keys -t fox:editor '../update_fox_repos.sh' C-m
     tmux send-keys -t fox:editor 'git status' C-m
     tmux send-keys -t fox:editor 'vim .' C-m
 
