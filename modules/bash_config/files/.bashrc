@@ -103,13 +103,6 @@ PATH=$PATH:./node_modules/.bin
 export NPM_TOKEN=$(grep -oP 'authToken=\K.*' ~/.npmrc)
 
 #---------------------------------------
-# Docker Shortcuts
-#---------------------------------------
-alias dockerRemoveStoppedContainers='docker rm $(docker ps -a -q)'
-alias dockerRemoveUntaggedImages='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
-alias dockerRemoveOrphanVolumes='docker volume rm $(docker volume ls -qf dangling=true)'
-
-#---------------------------------------
 # MongoDB
 #---------------------------------------
 PATH=$PATH:~/bin/robomongo-0.9.0/bin
