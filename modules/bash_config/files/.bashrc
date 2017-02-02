@@ -69,7 +69,6 @@ PS1='$PWD
 
 # add ~/bin to PATH
 PATH=$PATH:~/bin
-PATH=$PATH:~/bin/robomongo-0.9.0/bin
 
 # fix perl locale warning
 export LC_CTYPE=en_US.UTF-8
@@ -111,17 +110,22 @@ alias dockerRemoveUntaggedImages='docker rmi $(docker images | grep "^<none>" | 
 alias dockerRemoveOrphanVolumes='docker volume rm $(docker volume ls -qf dangling=true)'
 
 #---------------------------------------
+# MongoDB
+#---------------------------------------
+PATH=$PATH:~/bin/robomongo-0.9.0/bin
+
+#---------------------------------------
 # Python
 #---------------------------------------
-. /usr/local/bin/virtualenvwrapper.sh
+# . /usr/local/bin/virtualenvwrapper.sh
 
 #---------------------------------------
 # PHP
 #---------------------------------------
-source ~/.phpbrew/bashrc
+# source ~/.phpbrew/bashrc
 
 #---------------------------------------
 # Ruby
 #---------------------------------------
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)" # load rbenv automatically
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)" # load rbenv automatically
