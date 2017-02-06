@@ -3,7 +3,8 @@ class bin_config {
   $executables = [
     'tmux_clients',
     'tmux_knowledge',
-    'tmux_fox',
+    'tmux_foxv2',
+    'tmux_foxv3',
     'tmux_quanto-api',
   ]
 

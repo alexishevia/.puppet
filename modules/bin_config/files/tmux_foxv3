@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# if 'foxv3' session exists, attach to it.
+# otherwise, create it with the following windows:
+# - editor: vim
+# - draft: run app in draft mode
+# - published: run app in published mode
+
+tmux has-session -t foxv3
+
+if [ $? != 0 ]
+then
+    # editor window
+    tmux new -s foxv3 -n editor -d
+    tmux send-keys -t foxv3:editor 'cd ~/Projects/X-Team/brian-hub' C-m
+    tmux send-keys -t foxv3:editor 'docker-compose up -d es mongo redis elasticmq' C-m
+    tmux send-keys -t foxv3:editor 'nvm use' C-m
+    tmux send-keys -t foxv3:editor 'vim .' C-m
+
+    # draft window
+    tmux new-window -t foxv3 -n draft
+    tmux split-window -v -t foxv3:draft
+    ## top pane
+    tmux send-keys -t foxv3:draft.0 'cd ~/Projects/X-Team/brian-hub/fbccontent' C-m
+    tmux send-keys -t foxv3:draft.0 'nvm use' C-m
+    tmux send-keys -t foxv3:draft.0 'sleep 30' C-m
+    tmux send-keys -t foxv3:draft.0 'PORT=8000 DEBUG_PORT=5858 ./runDraft' C-m
+    ## bottom pane
+    tmux send-keys -t foxv3:draft.1 'cd ~/Projects/X-Team/brian-hub/fbccontent' C-m
+    tmux send-keys -t foxv3:draft.1 'nvm use' C-m
+    tmux send-keys -t foxv3:draft.1 'sleep 32' C-m
+    tmux send-keys -t foxv3:draft.1 'node debug localhost:5858' C-m
+
+    # published window
+    tmux new-window -t foxv3 -n published
+    tmux split-window -v -t foxv3:published
+    ## top pane
+    tmux send-keys -t foxv3:published.0 'cd ~/Projects/X-Team/brian-hub/fbccontent' C-m
+    tmux send-keys -t foxv3:published.0 'nvm use' C-m
+    tmux send-keys -t foxv3:published.0 'sleep 32' C-m
+    tmux send-keys -t foxv3:published.0 'PORT=8001 DEBUG_PORT=5859 ./runPublished' C-m
+    ## bottom pane
+    tmux send-keys -t foxv3:published.1 'cd ~/Projects/X-Team/brian-hub/fbccontent' C-m
+    tmux send-keys -t foxv3:published.1 'nvm use' C-m
+    tmux send-keys -t foxv3:published.1 'sleep 34' C-m
+    tmux send-keys -t foxv3:published.1 'node debug localhost:5859' C-m
+fi
+
+# select window 'editor'
+tmux select-window -t foxv3:editor
+
+# attach to session
+tmux attach -t foxv3
