@@ -304,6 +304,7 @@ endfunction
 " don't create backup files
 set nobackup
 set nowritebackup
+set noswapfile
 
 " save backup files to a custom directory
 " set backupdir=~/.vim/backup
