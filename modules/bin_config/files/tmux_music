@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# if 'music' session exists, attach to it.
+# otherwise, create it with the following windows:
+#   - mfp: music-for-programming
+
+tmux has-session -t music
+
+if [ $? != 0 ]
+then
+    # mfp window
+    tmux new -s music -n mfp -d
+    tmux send-keys -t music:mfp 'mfp' C-m
+fi
+
+# select window 'mfp'
+tmux select-window -t music:mfp
+
+# attach to session
+tmux attach -t music

@@ -2,6 +2,7 @@ class bin_config {
 
   $executables = [
     'tmux_clients',
+    'tmux_music',
     'tmux_knowledge',
     'tmux_foxv2',
     'tmux_foxv3',
