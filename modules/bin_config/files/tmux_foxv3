@@ -11,15 +11,15 @@ if [ $? != 0 ]
 then
     # editor window
     tmux new -s foxv3 -n editor -d
-    tmux send-keys -t foxv3:editor 'cd ~/Projects/X-Team/brian-hub' C-m
+    tmux send-keys -t foxv3:editor 'cd ~/Projects/X-Team/v3/brian-hub' C-m
     tmux send-keys -t foxv3:editor 'nvm use' C-m
     tmux send-keys -t foxv3:editor 'clear' C-m
-    tmux send-keys -t foxv3:editor '../update_fox_repos.sh' C-m
+    tmux send-keys -t foxv2:editor 'git pull' C-m
     tmux send-keys -t foxv3:editor 'vim .' C-m
 
     # docker window
     tmux new-window -t foxv3 -n docker
-    tmux send-keys -t foxv3:docker 'cd ~/Projects/X-Team/brian-hub' C-m
+    tmux send-keys -t foxv3:docker 'cd ~/Projects/X-Team/v3/brian-hub' C-m
     tmux send-keys -t foxv3:docker 'nvm use' C-m
     tmux send-keys -t foxv3:docker 'clear' C-m
     tmux send-keys -t foxv3:docker 'COMPOSE_HTTP_TIMEOUT=300 docker-compose up'
