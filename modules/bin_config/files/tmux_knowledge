@@ -19,7 +19,7 @@ then
     # elasticsearch window
     tmux new-window -t knowledge -n elasticsearch
     tmux send-keys -t knowledge:elasticsearch 'cd ~/Projects/Personales/elasticsearch_learning' C-m
-    tmux send-keys -t knowledge:elasticsearch 'docker-compose up -d' C-m
+    tmux send-keys -t knowledge:elasticsearch 'docker-compose up -d'
 fi
 
 # select window 'editor'
