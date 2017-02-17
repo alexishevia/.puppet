@@ -3,6 +3,7 @@
 # if 'knowledge' session exists, attach to it.
 # otherwise, create it with the following windows:
 #   - editor: vim
+#   - elasticsearch: elasticsearch learning project
 
 tmux has-session -t knowledge
 
@@ -12,6 +13,13 @@ then
     tmux new -s knowledge -n editor -d
     tmux send-keys -t knowledge:editor 'cd ~/knowledge' C-m
     tmux send-keys -t knowledge:editor 'vim .' C-m
+    tmux send-keys -t knowledge:editor ',t' C-m
+    tmux send-keys -t knowledge:editor ':edit ~/Dropbox/Learning.md' C-m
+
+    # elasticsearch window
+    tmux new-window -t knowledge -n elasticsearch
+    tmux send-keys -t knowledge:elasticsearch 'cd ~/Projects/Personales/elasticsearch_learning' C-m
+    tmux send-keys -t knowledge:elasticsearch 'docker-compose up -d' C-m
 fi
 
 # select window 'editor'
