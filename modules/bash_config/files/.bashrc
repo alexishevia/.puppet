@@ -91,6 +91,12 @@ PATH=$PATH:~/android-sdk/tools
 PATH=$PATH:~/android-sdk/platform-tools
 
 #---------------------------------------
+# Docker
+#---------------------------------------
+# remove volumes which are both dangling and have no custom name
+alias dockerRemoveUntaggedVolumes='docker volume rm $(docker volume ls -qf dangling=true | grep ".\{64\}")'
+
+#---------------------------------------
 # Node
 #---------------------------------------
 # add nvm to path
