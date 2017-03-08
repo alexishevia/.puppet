@@ -14,8 +14,9 @@ then
     tmux send-keys -t foxv3:editor 'cd ~/Projects/X-Team/v3/brian-hub' C-m
     tmux send-keys -t foxv3:editor 'nvm use' C-m
     tmux send-keys -t foxv3:editor 'clear' C-m
-    tmux send-keys -t foxv2:editor 'git pull' C-m
-    tmux send-keys -t foxv3:editor 'vim .' C-m
+    tmux send-keys -t foxv3:editor 'git pull' C-m
+    tmux send-keys -t foxv3:editor 'git submodule update --recursive --remote' C-m
+    tmux send-keys -t foxv3:editor 'vim .'
 
     # docker window
     tmux new-window -t foxv3 -n docker
