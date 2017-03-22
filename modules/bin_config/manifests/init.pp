@@ -7,6 +7,7 @@ class bin_config {
     'tmux_foxv2',
     'tmux_foxv3',
     'tmux_quanto-api',
+    'tmux_mongo_learning',
   ]
 
   file { "/home/$id/bin":
