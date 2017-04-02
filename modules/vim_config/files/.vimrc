@@ -4,32 +4,53 @@ set term=screen-256color
 " load vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'kien/ctrlp.vim'
+" fuzzy file finder
+Plug 'ctrlpvim/ctrlp.vim'
+
+" editorconfig.org support
 Plug 'editorconfig/editorconfig-vim'
+
+" incrementally highlight search pattern matches
 Plug 'haya14busa/incsearch.vim'
-Plug 'Shougo/neocomplcache.vim'
+
+" auto-completion
+Plug 'Shougo/neocomplete.vim'
+
+" easy comment/uncomment
 Plug 'scrooloose/nerdcommenter'
+
+" file explorer
 Plug 'scrooloose/nerdtree'
+
+" syntax checking
 Plug 'scrooloose/syntastic'
-Plug 'tomtom/tlib_vim'
-Plug 'chrisbra/unicode.vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
+
+" lean & mean status/tabline
 Plug 'bling/vim-airline'
-Plug 'tpope/vim-classpath'
-Plug 'tpope/vim-dispatch'
+
+" easily align text
 Plug 'junegunn/vim-easy-align'
-Plug 'tpope/vim-fireplace'
+
+" a Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
-Plug 'aquach/vim-http-client'
+
+" visually display indent levels in code
 Plug 'nathanaelkane/vim-indent-guides'
+
+" language pack
 Plug 'sheerun/vim-polyglot'
+
+" automatically detect indent settings
 Plug 'ciaranm/detectindent'
+
+" extended % matching for HTML, LaTeX, and many other languages
+Plug 'tmhedberg/matchit'
+
+" utility functions
+Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
-Plug 'ivalkeen/nerdtree-execute'
-Plug 'tmhedberg/matchit'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -64,7 +85,7 @@ fun! <SID>TrimWhiteSpace()
   call cursor(l, c)
 endfun
 
-"remove trailing whitespace on file save:
+" remove trailing whitespace on file save:
 augroup trimWhitespace
   autocmd BufWritePre * :call <SID>TrimWhiteSpace()
 augroup END
@@ -77,14 +98,17 @@ set ttym=xterm2
 au CursorMoved * checktime
 au CursorMovedI * checktime
 
+" disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+
 " enable auto-complete on startup
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 1
 
-" auto-complete <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" auto-complete use smartcase
+let g:neocomplete#enable_smart_case = 1
 
-" auto-complete <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" auto-complete <CR> completion.
+inoremap <expr><CR>  pumvisible() ? "\<C-n>" : "\<CR>"
 
 " use ,p to do fuzzy filename search
 map <Leader>p :CtrlP<Enter>
