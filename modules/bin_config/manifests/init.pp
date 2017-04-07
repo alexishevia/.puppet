@@ -5,7 +5,8 @@ class bin_config {
     'tmux_music',
     'tmux_knowledge',
     'tmux_foxv2',
-    'tmux_foxv3',
+    'tmux_foxv3_old',
+    'tmux_foxv3_new',
     'tmux_quanto-api',
     'tmux_mongo_learning',
   ]

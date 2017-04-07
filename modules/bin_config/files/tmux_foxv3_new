@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# if 'foxv3_new' session exists, attach to it.
+# otherwise, create it with the following windows:
+# - editor: vim
+# - docker: start docker-compose
+
+tmux has-session -t foxv3_new
+
+if [ $? != 0 ]
+then
+    # editor window
+    tmux new -s foxv3_new -n editor -d
+    tmux send-keys -t foxv3_new:editor 'cd ~/Projects/X-Team/v3_new/dcgapi-services' C-m
+    tmux send-keys -t foxv3_new:editor 'nvm use' C-m
+    tmux send-keys -t foxv3_new:editor 'source ../.aws_keys.sh' C-m
+    tmux send-keys -t foxv3_new:editor 'clear' C-m
+    tmux send-keys -t foxv3_new:editor 'git pull' C-m
+    tmux send-keys -t foxv3_new:editor 'vim .'
+
+    # docker window (top)
+    tmux new-window -t foxv3_new -n docker
+    tmux send-keys -t foxv3_new:docker 'cd ~/Projects/X-Team/v3_new/dcgapi-services' C-m
+    tmux send-keys -t foxv3_new:docker 'nvm use' C-m
+    tmux send-keys -t foxv3_new:docker 'source ../.aws_keys.sh' C-m
+    tmux send-keys -t foxv3_new:docker 'clear' C-m
+    tmux send-keys -t foxv3_new:docker 'docker-compose up' C-m
+
+    # docker window (bottom)
+    tmux split-window -t foxv3_new:docker
+    tmux send-keys -t foxv3_new:docker.1 'cd ~/Projects/X-Team/v3_new/dcgapi-services' C-m
+    tmux send-keys -t foxv3_new:docker.1 'nvm use' C-m
+    tmux send-keys -t foxv3_new:docker.1 'source ../.aws_keys.sh' C-m
+    tmux send-keys -t foxv3_new:docker.1 'sleep 6' C-m
+    tmux send-keys -t foxv3_new:docker.1 './start all' C-m
+    tmux send-keys -t foxv3_new:docker.1 'xdg-open http://localhost:8500/ui/' C-m
+fi
+
+# select window 'fbccontent'
+tmux select-window -t foxv3_new:editor
+
+# attach to session
+tmux attach -t foxv3_new

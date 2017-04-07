@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# if 'foxv3_old' session exists, attach to it.
+# otherwise, create it with the following windows:
+# - fbccontent: vim
+# - dcgmodels-v3: vim
+# - docker: start docker-compose
+
+tmux has-session -t foxv3_old
+
+if [ $? != 0 ]
+then
+    # fbccontent window
+    tmux new -s foxv3_old -n fbccontent -d
+    tmux send-keys -t foxv3_old:fbccontent 'cd ~/Projects/X-Team/v3_old/brian-hub' C-m
+    tmux send-keys -t foxv3_old:fbccontent 'nvm use' C-m
+    tmux send-keys -t foxv3_old:fbccontent 'clear' C-m
+    tmux send-keys -t foxv3_old:fbccontent 'git pull' C-m
+    tmux send-keys -t foxv3_old:fbccontent 'git submodule update --recursive --remote' C-m
+
+    # dcgmodels-v3 window
+    tmux new-window -t foxv3_old -n dcgmodels-v3
+    tmux send-keys -t foxv3_old:dcgmodels-v3 'cd ~/Projects/X-Team/v3_old/brian-hub/dcgmodels-v3' C-m
+    tmux send-keys -t foxv3_old:dcgmodels-v3 'nvm use' C-m
+    tmux send-keys -t foxv3_old:dcgmodels-v3 'clear' C-m
+    tmux send-keys -t foxv3_old:dcgmodels-v3 'vim .'
+
+    # docker window
+    tmux new-window -t foxv3_old -n docker
+    tmux send-keys -t foxv3_old:docker 'cd ~/Projects/X-Team/v3_old/brian-hub' C-m
+    tmux send-keys -t foxv3_old:docker 'nvm use' C-m
+    tmux send-keys -t foxv3_old:docker 'clear' C-m
+    tmux send-keys -t foxv3_old:docker 'COMPOSE_HTTP_TIMEOUT=300 docker-compose up'
+fi
+
+# select window 'fbccontent'
+tmux select-window -t foxv3_old:fbccontent
+
+# attach to session
+tmux attach -t foxv3_old
