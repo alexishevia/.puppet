@@ -295,6 +295,9 @@ map <Leader>ht :call HighlightTabs()<CR>
 " use ,hs to highlight leading spaces
 map <Leader>hs :call HighlightSpaces()<CR>
 
+" use case insensitive search by default
+set ignorecase
+
 " prefer 'expandtab' to 'noexpandtab' when no detection is possible
 :let g:detectindent_preferred_expandtab = 1
 
