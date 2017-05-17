@@ -75,7 +75,7 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # add alias for nordvpn
-alias nordvpn='sudo openvpn /etc/openvpn/us387.nordvpn.com.tcp443.ovpn'
+alias nordvpn='sudo openvpn /etc/openvpn/us651.nordvpn.com.tcp443.ovpn'
 
 #---------------------------------------
 # JAVA
