@@ -24,14 +24,7 @@ then
     tmux send-keys -t foxv3_new:docker 'nvm use' C-m
     tmux send-keys -t foxv3_new:docker 'source ../.aws_keys.sh' C-m
     tmux send-keys -t foxv3_new:docker 'clear' C-m
-    tmux send-keys -t foxv3_new:docker 'docker-compose up'
-
-    # docker window (bottom)
-    tmux split-window -t foxv3_new:docker
-    tmux send-keys -t foxv3_new:docker.1 'cd ~/Projects/X-Team/v3_new/dcgapi-services' C-m
-    tmux send-keys -t foxv3_new:docker.1 'nvm use' C-m
-    tmux send-keys -t foxv3_new:docker.1 'source ../.aws_keys.sh' C-m
-    tmux send-keys -t foxv3_new:docker.1 './start all'
+    tmux send-keys -t foxv3_new:docker 'bin/start all && bin/tail'
 fi
 
 # select window 'fbccontent'
