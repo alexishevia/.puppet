@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# if 'faru' session exists, attach to it.
+# otherwise, create it with the following windows:
+# - editor: vim
+# - npm: npm start
+
+tmux has-session -t faru
+
+if [ $? != 0 ]
+then
+    # editor window
+    tmux new -s faru -n editor -d
+    tmux send-keys -t faru:editor 'cd ~/Projects/Personales/faru' C-m
+    tmux send-keys -t faru:editor 'nvm use' C-m
+    tmux send-keys -t faru:editor 'clear' C-m
+    tmux send-keys -t faru:editor 'git pull' C-m
+    tmux send-keys -t faru:editor 'vim .'
+
+    # npm window
+    tmux new-window -t faru -n npm
+    tmux send-keys -t faru:npm 'cd ~/Projects/Personales/faru' C-m
+    tmux send-keys -t faru:npm 'nvm use' C-m
+    tmux send-keys -t faru:npm 'clear' C-m
+    tmux send-keys -t faru:npm 'npm start'
+fi
+
+# select window 'editor'
+tmux select-window -t faru:editor
+
+# attach to session
+tmux attach -t faru

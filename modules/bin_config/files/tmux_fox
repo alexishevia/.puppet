@@ -13,21 +13,21 @@ then
     tmux new -s foxv3_new -n editor -d
     tmux send-keys -t foxv3_new:editor 'cd ~/Projects/X-Team/v3_new/dcgapi-services' C-m
     tmux send-keys -t foxv3_new:editor 'nvm use' C-m
-    tmux send-keys -t foxv3_new:editor 'source ../.aws_keys.sh' C-m
+    tmux send-keys -t foxv3_new:editor 'source ../.aws_keys' C-m
     tmux send-keys -t foxv3_new:editor 'clear' C-m
     tmux send-keys -t foxv3_new:editor 'git pull' C-m
     tmux send-keys -t foxv3_new:editor 'vim .'
 
-    # docker window (top)
+    # docker window
     tmux new-window -t foxv3_new -n docker
     tmux send-keys -t foxv3_new:docker 'cd ~/Projects/X-Team/v3_new/dcgapi-services' C-m
     tmux send-keys -t foxv3_new:docker 'nvm use' C-m
-    tmux send-keys -t foxv3_new:docker 'source ../.aws_keys.sh' C-m
+    tmux send-keys -t foxv3_new:docker 'source ../.aws_keys' C-m
     tmux send-keys -t foxv3_new:docker 'clear' C-m
     tmux send-keys -t foxv3_new:docker 'bin/start all && bin/tail'
 fi
 
-# select window 'fbccontent'
+# select window 'editor'
 tmux select-window -t foxv3_new:editor
 
 # attach to session

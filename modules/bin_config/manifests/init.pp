@@ -2,13 +2,9 @@ class bin_config {
 
   $executables = [
     'tmux_clients',
-    'tmux_music',
     'tmux_knowledge',
-    'tmux_foxv2',
-    'tmux_foxv3_old',
-    'tmux_foxv3_new',
-    'tmux_quanto-api',
-    'tmux_mongo_learning',
+    'tmux_fox',
+    'tmux_faru',
   ]
 
   file { "/home/$id/bin":
