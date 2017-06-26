@@ -46,6 +46,9 @@ Plug 'ciaranm/detectindent'
 " extended % matching for HTML, LaTeX, and many other languages
 Plug 'tmhedberg/matchit'
 
+" hande unicode and digraphs characters
+Plug 'chrisbra/unicode.vim'
+
 " utility functions
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-projectionist'
