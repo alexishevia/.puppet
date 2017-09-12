@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+/*
+ * Usage:
+ * timezones '2017-09-19T15:54:38.000Z'
+ * =>
+ *    UTC          2017-09-19T15:54:38Z
+ *    Los Angeles  2017-09-19T08:54:38-07:00
+ *    New York     2017-09-19T11:54:38-04:00
+ */
+
+var moment = require('moment-timezone');
+var utcRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[^Z]*Z$/; //
+
+var utcDate = process.argv[2];
+
+if (!utcDate || !utcDate.match(utcRegex)) {
+  console.error('please provide a UTC date as first argument');
+}
+
+var date = moment.utc(utcDate);
+console.log('UTC         ', date.format());
+console.log('Los Angeles ', date.tz('America/Los_Angeles').format());
+console.log('New York    ', date.tz('America/New_York').format());

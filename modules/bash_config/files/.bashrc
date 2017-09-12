@@ -69,6 +69,7 @@ PS1='$PWD
 
 # add ~/bin to PATH
 PATH=$PATH:~/bin
+PATH=$PATH:~/bin/timezones/bin
 
 # fix perl locale warning
 export LC_CTYPE=en_US.UTF-8
