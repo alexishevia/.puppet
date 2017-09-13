@@ -17,3 +17,5 @@
   pf = push --force-with-lease
 [core]
   editor = /usr/bin/vim
+[commit]
+  template = ~/.gitmessage
