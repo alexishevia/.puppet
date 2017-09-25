@@ -71,7 +71,7 @@ PS1='$PWD
 PATH=$PATH:~/bin
 
 # add FOX binaries to PATH
-PATH=$PATH:~/Dropbox/clients/X-Team/dcgapps/bin
+PATH=$PATH:~/Dropbox/clients/FOX/bin
 
 # fix perl locale warning
 export LC_CTYPE=en_US.UTF-8
