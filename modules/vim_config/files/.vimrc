@@ -87,8 +87,8 @@ set incsearch
 " highlight all matches when doing search (not just the next one)
 set hlsearch
 
-" use ,h to clear highlight after a search
-nnoremap <Leader>h :nohlsearch<CR>
+" use \ to clear highlight after a search
+nmap \ :nohlsearch<CR>
 
 " define a 'remove trailing whitespace' function:
 fun! <SID>TrimWhiteSpace()
