@@ -10,9 +10,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 " editorconfig.org support
 Plug 'editorconfig/editorconfig-vim'
 
-" incrementally highlight search pattern matches
-Plug 'haya14busa/incsearch.vim'
-
 " auto-completion
 Plug 'Shougo/neocomplete.vim'
 
@@ -65,8 +62,8 @@ set number
 let mapleader = ","
 
 " make j & k move up/down a single row in the screen (not on a linewise basis)
-nmap j gj
-nmap k gk
+nnoremap j gj
+nnoremap k gk
 
 " load theme
 colorscheme xoria256
@@ -79,6 +76,19 @@ set guifont=Monaco:h12
 
 " enable statusline
 set laststatus=2
+
+" make search case-insensitive except when you include upper-case characters
+set ignorecase
+set smartcase
+
+" highlight search as you type
+set incsearch
+
+" highlight all matches when doing search (not just the next one)
+set hlsearch
+
+" use ,h to clear highlight after a search
+nnoremap <Leader>h :nohlsearch<CR>
 
 " define a 'remove trailing whitespace' function:
 fun! <SID>TrimWhiteSpace()
@@ -216,38 +226,8 @@ autocmd FileType xhtml let b:match_words = '<\(\w\w*\):</\1,{:}'
 autocmd FileType xml let b:match_words = '<\(\w\w*\):</\1,{:}'
 autocmd FileType eco let b:match_words = '<\(\w\w*\):</\1,{:}'
 
-" highlight all matches
-set hlsearch
-
-" highlight matches when jumping to next
-nnoremap <silent> n   n:call HLNext(0.3)<cr>
-nnoremap <silent> N   N:call HLNext(0.3)<cr>
-
-function! HLNext (blinktime)
-    highlight BlackOnBlack ctermfg=black ctermbg=black
-    let [bufnum, lnum, col, off] = getpos('.')
-    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-    let hide_pat = '\%<'.lnum.'l.'
-            \ . '\|'
-            \ . '\%'.lnum.'l\%<'.col.'v.'
-            \ . '\|'
-            \ . '\%'.lnum.'l\%>'.(col+matchlen-1).'v.'
-            \ . '\|'
-            \ . '\%>'.lnum.'l.'
-    let ring = matchadd('BlackOnBlack', hide_pat, 101)
-    redraw
-    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-    call matchdelete(ring)
-    redraw
-endfunction
-
 " remap semicolon to colon (no need to use Shift + ;)
 nnoremap ; :
-
-" incsearch mapping
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
 
 " set secure mode for reading .vimrc
 set secure
@@ -301,9 +281,6 @@ map <Leader>ht :call HighlightTabs()<CR>
 
 " use ,hs to highlight leading spaces
 map <Leader>hs :call HighlightSpaces()<CR>
-
-" use case insensitive search by default
-set ignorecase
 
 " prefer 'expandtab' to 'noexpandtab' when no detection is possible
 :let g:detectindent_preferred_expandtab = 1
