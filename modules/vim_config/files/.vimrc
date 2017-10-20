@@ -64,6 +64,10 @@ set number
 " change <Leader> key from \ to ,
 let mapleader = ","
 
+" make j & k move up/down a single row in the screen (not on a linewise basis)
+nmap j gj
+nmap k gk
+
 " load theme
 colorscheme xoria256
 
