@@ -38,7 +38,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sheerun/vim-polyglot'
 
 " automatically detect indent settings
-Plug 'ciaranm/detectindent'
+Plug 'tpope/vim-sleuth'
 
 " extended % matching for HTML, LaTeX, and many other languages
 Plug 'tmhedberg/matchit'
@@ -281,17 +281,6 @@ map <Leader>ht :call HighlightTabs()<CR>
 
 " use ,hs to highlight leading spaces
 map <Leader>hs :call HighlightSpaces()<CR>
-
-" prefer 'expandtab' to 'noexpandtab' when no detection is possible
-:let g:detectindent_preferred_expandtab = 1
-
-" specify a preferred indent level when no detection is possible
-:let g:detectindent_preferred_indent = 2
-
-" run detect indent when starting to edit a new buffer
-augroup detectIndentOnOpen
-  autocmd BufReadPost * :DetectIndent
-augroup END
 
 " define a function to easily change indent size
 function! IndentSize(len)
