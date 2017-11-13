@@ -132,3 +132,12 @@ PATH=$PATH:~/bin/robomongo-0.9.0/bin
 #---------------------------------------
 # export PATH="$HOME/.rbenv/bin:$PATH"
 # eval "$(rbenv init -)" # load rbenv automatically
+
+#---------------------------------------
+# FOX specific projects
+#---------------------------------------
+if [[ $PWD/ = $HOME/Projects/FOX/* ]];
+  then
+    source $HOME/Projects/FOX/.aws_keys;
+    nvm use;
+fi
