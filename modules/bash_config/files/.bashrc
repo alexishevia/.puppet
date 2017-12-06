@@ -120,7 +120,8 @@ PATH=$PATH:~/bin/robomongo-0.9.0/bin
 #---------------------------------------
 # Python
 #---------------------------------------
-# . /usr/local/bin/virtualenvwrapper.sh
+WORKON_HOME=~/.virtualenvs
+. /usr/local/bin/virtualenvwrapper.sh
 
 #---------------------------------------
 # PHP
