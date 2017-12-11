@@ -58,6 +58,9 @@ call plug#end()
 " use line numbers
 set number
 
+" display line numbers relative to the current curser position
+set relativenumber
+
 " change <Leader> key from \ to ,
 let mapleader = ","
 
@@ -156,6 +159,12 @@ map <Leader>n :NERDTreeToggle<Enter>
 
 " use ,r to open current file on NERDTree
 map <leader>r :NERDTreeFind<cr>
+
+" enable line numbers in NERDTree
+let NERDTreeShowLineNumbers=1
+
+" make sure relative line numbers are used in NERDTree
+autocmd FileType nerdtree setlocal relativenumber
 
 " use ,t to create a new tab
 map <leader>t :tabnew<Enter>
