@@ -46,6 +46,9 @@ Plug 'tmhedberg/matchit'
 " handle unicode and digraphs characters
 Plug 'chrisbra/unicode.vim'
 
+" markdown utilities
+Plug 'plasticboy/vim-markdown'
+
 " markdown table of contents generator
 Plug 'ajorgensen/vim-markdown-toc'
 
@@ -154,6 +157,9 @@ let g:ctrlp_user_command = {
 " show hidden files on NERDTree
 let NERDTreeShowHidden=1
 
+" fold by syntax
+set foldmethod=syntax
+
 " use old folder markers (avoids issues with some terminals)
 let g:NERDTreeDirArrows=0
 
@@ -216,9 +222,6 @@ set diffopt=filler,vertical
 au BufNewFile,BufRead *.pp set filetype=ruby
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au BufNewFile,BufRead *.jbuilder set filetype=ruby
-
-" disable markdown folding
-let g:vim_markdown_folding_disabled=1
 
 " remap U to real undo
 map U :later<Enter>
