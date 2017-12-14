@@ -43,8 +43,11 @@ Plug 'tpope/vim-sleuth'
 " extended % matching for HTML, LaTeX, and many other languages
 Plug 'tmhedberg/matchit'
 
-" hande unicode and digraphs characters
+" handle unicode and digraphs characters
 Plug 'chrisbra/unicode.vim'
+
+" markdown table of contents generator
+Plug 'ajorgensen/vim-markdown-toc'
 
 " utility functions
 Plug 'tomtom/tlib_vim'
