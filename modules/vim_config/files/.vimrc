@@ -97,7 +97,7 @@ set incsearch
 set hlsearch
 
 " use \ to clear highlight after a search
-nmap \ :nohlsearch<CR>
+nnoremap \ :nohlsearch<CR>
 
 " define a 'remove trailing whitespace' function:
 fun! <SID>TrimWhiteSpace()
@@ -137,7 +137,7 @@ let g:neocomplete#enable_smart_case = 1
 inoremap <expr><CR>  pumvisible() ? "\<C-n>" : "\<CR>"
 
 " use ,p to do fuzzy filename search
-map <Leader>p :CtrlP<Enter>
+nnoremap <Leader>p :CtrlP<Enter>
 
 " make ctrlP open files on new tab
 let g:ctrlp_prompt_mappings = {
@@ -164,10 +164,10 @@ set foldmethod=syntax
 let g:NERDTreeDirArrows=0
 
 " use ,n to toggle nerdtreetabs
-map <Leader>n :NERDTreeToggle<Enter>
+nnoremap <Leader>n :NERDTreeToggle<Enter>
 
 " use ,r to open current file on NERDTree
-map <leader>r :NERDTreeFind<cr>
+nnoremap <leader>r :NERDTreeFind<cr>
 
 " enable line numbers in NERDTree
 let NERDTreeShowLineNumbers=1
@@ -176,10 +176,10 @@ let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
 
 " use ,t to create a new tab
-map <leader>t :tabnew<Enter>
+nnoremap <leader>t :tabnew<Enter>
 
 " use gr to go to previous tab
-map gr :tabp<Enter>
+nnoremap gr :tabp<Enter>
 
 " yank and paste with the system clipboard
 
@@ -192,12 +192,12 @@ map gr :tabp<Enter>
     endif
 
 " use ENTER to add new lines without going into insert mode
-map <CR> o<Esc>k
+nnoremap <CR> o<Esc>k
 
 " Start recording keystrokes by typing qq.
 " End recording with q (first press Escape if you are in insert mode).
 " Play the recorded keystrokes by hitting space.
-:nnoremap <Space> @q
+nnoremap <Space> @q
 
 " detect utf-8
 if has("multi_byte")
@@ -207,10 +207,10 @@ if has("multi_byte")
 endif
 
 " use F8 to move tab left
-map <F8> :execute "tabmove" tabpagenr() - 2 <CR>
+noremap <F8> :execute "tabmove" tabpagenr() - 2 <CR>
 
 " use F9 to move tab right
-map <F9> :execute "tabmove" tabpagenr() + 1 <CR>
+noremap <F9> :execute "tabmove" tabpagenr() + 1 <CR>
 
 " make sure wrap is not turned off by vimdiff
 au VimEnter * if &diff | execute 'windo set wrap' | endif
@@ -224,7 +224,7 @@ au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au BufNewFile,BufRead *.jbuilder set filetype=ruby
 
 " remap U to real undo
-map U :later<Enter>
+nnoremap U :later<Enter>
 
 " use , + direction to switch between splits
 nnoremap <leader>j <C-W><C-J>
@@ -271,10 +271,10 @@ let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_coffee_checkers=['coffeelint']
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <Enter> <Plug>(EasyAlign)
+vnoremap <Enter> <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nnoremap ga <Plug>(EasyAlign)
 
 " by default, don't highlight anything
 match none
@@ -292,10 +292,10 @@ function! HighlightSpaces()
 endfunction
 
 " use ,ht to highlight leading tabs
-map <Leader>ht :call HighlightTabs()<CR>
+nnoremap <Leader>ht :call HighlightTabs()<CR>
 
 " use ,hs to highlight leading spaces
-map <Leader>hs :call HighlightSpaces()<CR>
+nnoremap <Leader>hs :call HighlightSpaces()<CR>
 
 " define a function to easily change indent size
 function! IndentSize(len)
