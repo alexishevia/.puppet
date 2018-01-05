@@ -305,16 +305,24 @@ function! IndentSize(len)
 endfunction
 
 " how many columns a tab counts for
-"set tabstop=2
+set tabstop=2
 
 " how many columns text is indented with the reindent operations (<< and >>)
-"set shiftwidth=2
+set shiftwidth=2
 
 " amount of columns vim uses when you hit Tab in insert mode
-"set softtabstop=2
+set softtabstop=2
 
 " convert tabs to spaces
-"set expandtab
+set expandtab
+
+" replace '[check]' with an actual checkmark
+iabbrev [check] 🗸
+
+" replace '[bullet]' with an actual bullet
+iabbrev [bullet] ∙
+iabbrev [bullet1] •
+iabbrev [bullet2] ◦
 
 " don't create backup files
 set nobackup
