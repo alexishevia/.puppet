@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# open my 'hotlist' of websites in the browser
+
+HOTLIST='https://www.toodledo.com/tasks/index.php#context
+https://x-team.slack.com/messages/C3N9KTFU5/
+https://mail.google.com/mail/u/0/#inbox
+https://mail.google.com/mail/u/1/#inbox
+https://calendar.google.com/calendar/r
+https://web.whatsapp.com/
+https://feedly.com/i/my
+https://www.facebook.com/'
+
+for url in $HOTLIST; do
+  xdg-open $url
+done

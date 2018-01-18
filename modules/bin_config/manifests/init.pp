@@ -5,6 +5,7 @@ class bin_config {
     'tmux_knowledge',
     'tmux_fox',
     'tmux_faru',
+    'hotlist'
   ]
 
   file { "/home/$id/bin":
