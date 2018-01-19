@@ -157,8 +157,9 @@ let g:ctrlp_user_command = {
 " show hidden files on NERDTree
 let NERDTreeShowHidden=1
 
-" fold by syntax
+" fold by syntax, but open all folds by default when opening a file
 set foldmethod=syntax
+autocmd BufWinEnter * silent! :%foldopen!
 
 " use old folder markers (avoids issues with some terminals)
 let g:NERDTreeDirArrows=0
