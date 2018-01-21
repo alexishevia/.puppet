@@ -16,4 +16,10 @@ class vim_config {
     source => "puppet:///modules/vim_config/.vimrc",
   }
 
+  file { "/home/$id/.eslintrc.js":
+    owner => "$id",
+    group => "$id",
+    mode => "644",
+    source => "puppet:///modules/vim_config/.eslintrc.js",
+  }
 }
