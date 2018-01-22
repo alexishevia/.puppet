@@ -4,7 +4,7 @@ module.exports = {
     indent: ['error', 2, {
       MemberExpression: 0, // indent the multi-line property chains with 0 spaces
     }],
-    'require-jsdoc': ['error', {
+    'require-jsdoc': ['warn', {
       require: {
         FunctionDeclaration: true,
         MethodDefinition: true,
@@ -13,6 +13,6 @@ module.exports = {
         FunctionExpression: true,
       }
     }],
-    'valid-jsdoc': ['error'],
+    'valid-jsdoc': ['warn'],
   },
 };
