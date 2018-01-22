@@ -14,5 +14,9 @@ module.exports = {
       }
     }],
     'valid-jsdoc': ['warn'],
+    'no-param-reassign': ['error', {
+      props: true,
+      ignorePropertyModificationsFor: ['memo', 'acc'], // allow reducer accumulators to be modified
+    }],
   },
 };
