@@ -5,7 +5,8 @@ class bin_config {
     'tmux_knowledge',
     'tmux_fox',
     'tmux_faru',
-    'hotlist'
+    'hotlist',
+    'install_global_packages',
   ]
 
   file { "/home/$id/bin":

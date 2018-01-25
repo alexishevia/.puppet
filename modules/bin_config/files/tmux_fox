@@ -13,7 +13,7 @@ then
     # editor window
     tmux new -s fox -n editor -d
     tmux send-keys -t fox:editor 'cd ~/Projects/FOX/dcgapi-services' C-m
-    tmux send-keys -t fox:editor 'nvm use' C-m
+    tmux send-keys -t fox:editor 'nvm-use' C-m
     tmux send-keys -t fox:editor 'source ../.aws_keys' C-m
     tmux send-keys -t fox:editor 'clear' C-m
     tmux send-keys -t fox:editor 'git pull' C-m
@@ -22,7 +22,7 @@ then
     # tail window
     tmux new-window -t fox -n tail
     tmux send-keys -t fox:tail 'cd ~/Projects/FOX/dcgapi-services' C-m
-    tmux send-keys -t fox:tail 'nvm use' C-m
+    tmux send-keys -t fox:tail 'nvm-use' C-m
     tmux send-keys -t fox:tail 'source ../.aws_keys' C-m
     tmux send-keys -t fox:tail 'clear' C-m
     tmux send-keys -t fox:tail 'bin/start && bin/tail'
@@ -30,7 +30,7 @@ then
     # indexer window
     tmux new-window -t fox -n indexer
     tmux send-keys -t fox:indexer 'cd ~/Projects/FOX/dcgapi-services' C-m
-    tmux send-keys -t fox:indexer 'nvm use' C-m
+    tmux send-keys -t fox:indexer 'nvm-use' C-m
     tmux send-keys -t fox:indexer 'source ../.aws_keys' C-m
     tmux send-keys -t fox:indexer 'clear' C-m
     tmux send-keys -t fox:indexer 'docker-compose exec indexer ash'

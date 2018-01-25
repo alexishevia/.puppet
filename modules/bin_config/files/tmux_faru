@@ -12,7 +12,7 @@ then
     # editor window
     tmux new -s faru -n editor -d
     tmux send-keys -t faru:editor 'cd ~/Projects/Personales/faru' C-m
-    tmux send-keys -t faru:editor 'nvm use' C-m
+    tmux send-keys -t faru:editor 'nvm-use' C-m
     tmux send-keys -t faru:editor 'clear' C-m
     tmux send-keys -t faru:editor 'git pull' C-m
     tmux send-keys -t faru:editor 'vim .'
@@ -20,7 +20,7 @@ then
     # npm window
     tmux new-window -t faru -n npm
     tmux send-keys -t faru:npm 'cd ~/Projects/Personales/faru' C-m
-    tmux send-keys -t faru:npm 'nvm use' C-m
+    tmux send-keys -t faru:npm 'nvm-use' C-m
     tmux send-keys -t faru:npm 'clear' C-m
     tmux send-keys -t faru:npm 'npm start'
 fi

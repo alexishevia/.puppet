@@ -112,6 +112,11 @@ PATH=./node_modules/.bin:$PATH
 # save ~/.npmrc authToken value into an NPM_TOKEN env variable
 export NPM_TOKEN=$(grep -oP 'authToken=\K.*' ~/.npmrc)
 
+# create an nvm-use function that automatically installs global npm packages
+function nvm-use {
+  nvm use $1 && install_global_packages
+}
+
 #---------------------------------------
 # MongoDB
 #---------------------------------------
@@ -140,5 +145,5 @@ WORKON_HOME=~/.virtualenvs
 if [[ $PWD/ = $HOME/Projects/FOX/* ]];
   then
     source $HOME/Projects/FOX/.aws_keys;
-    nvm use;
+    nvm-use;
 fi

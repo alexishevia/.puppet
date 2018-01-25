@@ -1,0 +1,94 @@
+#!/usr/bin/env node
+
+/*
+ * Install global packages I commonly use.
+ */
+
+const { promisify } = require('util');
+const cp = require('child_process');
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
+
+const NPM_PACKAGES = {
+  timezones: 'timezones-cli',
+  'postman-updater': 'postman-updater-linux',
+};
+
+const OTHER_PACKAGES = {
+  postman: 'postman-updater install -l ~/.Postman',
+};
+
+const SYMLINKS = {
+  [path.join(os.homedir(), 'bin/postman')]: path.join(os.homedir(), '.Postman/Postman'),
+};
+
+const exec = promisify(cp.exec);
+const access = promisify(fs.access);
+
+/**
+ * isInstalled()
+ * check if a binary is installed
+ *
+ * @param {String} bin - binary to examine
+ * @returns {Promise} - resolves with true if binary exists
+ */
+const isInstalled = bin => (
+  exec(`which ${bin}`).then(() => true).catch(() => false)
+);
+
+/**
+ * npmInstall()
+ * install a package using npm
+ *
+ * @param {String} pkg - package to install
+ * @returns {Promise} - resolves when package is installed
+ */
+const npmInstall = pkg => exec(`npm install -g ${pkg}`);
+
+/**
+ * installNpmPackages()
+ * install all my npm packages
+ *
+ * @returns {Promise} - resolves when all npm packages are installed
+ */
+const installNpmPackages = () => (
+  Promise.all(Object.keys(NPM_PACKAGES).map(pkg => (
+    isInstalled(pkg).then((installed) => {
+      if (installed) return true;
+      process.stdout.write(`Installing ${pkg}\n`);
+      return npmInstall(NPM_PACKAGES[pkg]);
+    })
+  )))
+);
+
+/**
+ * installOtherPackages()
+ * install all my 'other' packages
+ *
+ * @returns {Promise} - resolves when all packages are installed
+ */
+const installOtherPackages = () => (
+  Promise.all(Object.keys(OTHER_PACKAGES).map(pkg => (
+    isInstalled(pkg).then((installed) => {
+      if (installed) return true;
+      process.stdout.write(`Installing ${pkg}\n`);
+      return exec(OTHER_PACKAGES[pkg]);
+    })
+  )))
+);
+
+/**
+ * createSymlinks()
+ * create all symlinks
+ *
+ * @returns {Promise} = resolves when all symlinks are created
+ */
+const createSymlinks = () => (
+  Promise.all(Object.keys(SYMLINKS).map(src => (
+    access(src)
+    .catch(() => exec(`ln -s ${SYMLINKS[src]} ${src}`))
+  )))
+);
+
+installNpmPackages().then(installOtherPackages).then(createSymlinks);
