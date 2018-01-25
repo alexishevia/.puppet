@@ -16,8 +16,6 @@ $desiredPackages = [
   'unrar',
   'compizconfig-settings-manager',
   's3cmd',
-  'gnome-do',
-  'gnome-do-plugins',
   'compiz-plugins',
   'sni-qt:i386',
   'gcolor2',
@@ -29,6 +27,9 @@ $desiredPackages = [
   'rbenv',
   'tidy',
   'exuberant-ctags',
+  'synapse',
+  'httpie',
+  'jq',
 ]
 
 $undesiredPackages = ['avahi-daemon', 'vim', 'vim-gnome', 'terminator']
