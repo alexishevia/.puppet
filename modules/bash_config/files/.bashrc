@@ -96,9 +96,6 @@ alias dockerRemoveUntaggedVolumes='docker volume rm $(docker volume ls -qf dangl
 # add nvm to path
 source ~/.nvm/nvm.sh
 
-# add local node_modules binaries to PATH
-PATH=./node_modules/.bin:$PATH
-
 # save ~/.npmrc authToken value into an NPM_TOKEN env variable
 export NPM_TOKEN=$(grep -oP 'authToken=\K.*' ~/.npmrc)
 
