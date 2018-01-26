@@ -11,10 +11,10 @@ const os = require('os');
 const path = require('path');
 
 const NPM_PACKAGES = {
-  timezones: 'timezones-cli',
+  'timezones-cli': 'timezones-cli',
   'postman-updater': 'postman-updater-linux',
-  isCommitDeployed: '@foxdcg/is-commit-deployed',
-  reindexMPXItem: '@foxdcg/reindex-mpx-item',
+  'is-commit-deployed': '@foxdcg/is-commit-deployed',
+  'reindex-mpx-item': '@foxdcg/reindex-mpx-item',
 };
 
 const OTHER_PACKAGES = {

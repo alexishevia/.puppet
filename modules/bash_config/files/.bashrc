@@ -96,6 +96,9 @@ alias dockerRemoveUntaggedVolumes='docker volume rm $(docker volume ls -qf dangl
 # add nvm to path
 source ~/.nvm/nvm.sh
 
+# add autocomplete for npx
+complete -A command npx
+
 # save ~/.npmrc authToken value into an NPM_TOKEN env variable
 export NPM_TOKEN=$(grep -oP 'authToken=\K.*' ~/.npmrc)
 
