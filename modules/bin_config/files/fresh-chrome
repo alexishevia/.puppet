@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+# fresh-chrome
+#
+# Use this script launch a new instance of Google Chrome
+# with its own empty cache, cookies, and user configuration.
+#
+# The first time you run this script, it will launch a new Google
+# Chrome instance with a permanent user-data directory, which you can
+# customize below. Perform any initial setup you want to keep on every
+# new Chrome instance, such as adding bookmarks and extensions. Then
+# quit this Chrome instance with Command-Q or by selecting "Quit" from
+# the "Chrome" menu. (The red "close" button is not sufficient.)
+#
+# AFTER that, every time you run this script it will launch a new
+# Google Chrome instance with a temporary user-data directory copied
+# from the one you set up the first time you ran this script. Every
+# new instance of Google Chrome launched by this script will be
+# completely isolated from the others.
+
+
+
+### Customize these
+
+# Change this to the spoof a different timezone. Helpful for testing timezone specific client facing content.
+export TZ="America/Los_Angeles"
+
+# Permanent directory to store the user-data directory of your 'fresh'
+# Chrome configuration.
+fresh_dir="$HOME/.fresh-chrome"
+
+# Temporary directory in which to create new user-data directories for
+# temporary Chrome instances.
+tmp_dir="/tmp"
+
+
+
+### Main script begins
+
+set -e
+
+timestamp=`date +%Y%m%d%H%M%S`
+
+if [[ -e "$fresh_dir" ]]; then
+    user_dir="$tmp_dir/chrome-$timestamp-$RANDOM"
+    cp -r "$fresh_dir" "$user_dir"
+    google-chrome --args "--user-data-dir=$user_dir"
+else
+    google-chrome --args "--user-data-dir=$fresh_dir"
+fi

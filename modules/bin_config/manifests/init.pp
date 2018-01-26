@@ -7,6 +7,7 @@ class bin_config {
     'tmux_faru',
     'hotlist',
     'install_global_packages',
+    'fresh-chrome',
   ]
 
   file { "/home/$id/bin":
