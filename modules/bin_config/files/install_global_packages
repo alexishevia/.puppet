@@ -13,6 +13,8 @@ const path = require('path');
 const NPM_PACKAGES = {
   timezones: 'timezones-cli',
   'postman-updater': 'postman-updater-linux',
+  isCommitDeployed: '@foxdcg/is-commit-deployed',
+  reindexMPXItem: '@foxdcg/reindex-mpx-item',
 };
 
 const OTHER_PACKAGES = {
