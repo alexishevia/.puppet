@@ -21,6 +21,7 @@ Plug 'scrooloose/nerdtree'
 
 " syntax checking
 Plug 'scrooloose/syntastic'
+Plug 'mtscout6/syntastic-local-eslint.vim'
 
 " lean & mean status/tabline
 Plug 'bling/vim-airline'
