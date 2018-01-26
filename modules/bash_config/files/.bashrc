@@ -85,13 +85,6 @@ alias nordvpn_ny='sudo openvpn --config /etc/openvpn/ovpn_tcp/us327.nordvpn.com.
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
 #---------------------------------------
-# Android
-#---------------------------------------
-# add android tools to path
-PATH=$PATH:~/android-sdk/tools
-PATH=$PATH:~/android-sdk/platform-tools
-
-#---------------------------------------
 # Docker
 #---------------------------------------
 # remove volumes which are both dangling and have no custom name
@@ -124,6 +117,13 @@ PATH=$PATH:~/bin/robomongo-0.9.0/bin
 #---------------------------------------
 WORKON_HOME=~/.virtualenvs
 . /usr/local/bin/virtualenvwrapper.sh
+
+#---------------------------------------
+# Android
+#---------------------------------------
+# add android tools to path
+# PATH=$PATH:~/android-sdk/tools
+# PATH=$PATH:~/android-sdk/platform-tools
 
 #---------------------------------------
 # PHP
