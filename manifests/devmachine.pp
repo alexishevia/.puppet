@@ -1,3 +1,8 @@
+class { 'nvm':
+  user => "$id",
+  manage_profile => false,
+}
+
 include vim_config
 include git_config
 include ack_config
